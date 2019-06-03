@@ -1,0 +1,25 @@
+apply plugin: 'com.android.library'
+apply from: '../gradle/VERSIONS.gradle'
+
+
+android {
+    compileSdkVersion localVersion.compileSdkVersion
+    defaultConfig {
+        minSdkVersion localVersion.minSdkVersion
+        targetSdkVersion localVersion.targetSdkVersion
+        versionCode localVersion.versionCode
+        versionName localVersion.versionName
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compileOnly("com.ydevelop:rxNetWork:$apiVersion.rxNetWorkVersion") {
+        exclude group: "com.android.support"
+    }
+    compileOnly "com.android.support:support-v4:$apiVersion.supportVersion"
+}

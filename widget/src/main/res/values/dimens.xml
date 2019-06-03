@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingDefaultResource">
+    <dimen name="widget.dp.6">6dp</dimen>
+    <dimen name="widget.dp.8">8dp</dimen>
+    <dimen name="widget.dp.10">10dp</dimen>
+    <dimen name="widget.dp.60">60dp</dimen>
+    <dimen name="widget.dp.36">36dp</dimen>
+    <dimen name="widget.dp.42">42dp</dimen>
+    <dimen name="widget.dp.120">120dp</dimen>
+    <dimen name="widget.sp.18">18sp</dimen>
+</resources>

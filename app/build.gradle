@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+apply plugin: 'AndResGuard'
+apply from: '../gradle/VERSIONS.gradle'
+
+andResGuard {
+    mappingFile = null
+    use7zip = true
+    useSign = true
+    keepRoot = false
+    whiteList = [
+            "R.mipmap.ic_launcher",
+            "R.id.*"
+    ]
+    compressFilePattern = [
+            "*.png",
+            "*.jpg",
+            "*.jpeg",
+            "resource.asrc"
+    ]
+    sevenzip {
+        artifact = "com.tencent.mm:SevenZip:$apiVersion.andResGuardVersionVersion"
+    }
+}
+
+android {
+    compileSdkVersion localVersion.compileSdkVersion
+    defaultConfig {
+        applicationId appId.app
+        minSdkVersion localVersion.minSdkVersion
+        targetSdkVersion localVersion.targetSdkVersion
+        versionCode localVersion.versionCode
+        versionName localVersion.versionName
+        resConfigs "zh"
+        multiDexEnabled true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file('android.demo.template.jks')
+            storePassword 'android.demo.template'
+            keyAlias 'android'
+            keyPassword 'android.demo.template'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.jakewharton:butterknife:$apiVersion.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$apiVersion.butterknifeVersion"
+    implementation("com.alibaba:arouter-api:$apiVersion.routeApiVersion") {
+        exclude group: "com.android.support"
+    }
+    annotationProcessor "com.alibaba:arouter-compiler:$apiVersion.routeCompilerVersion"
+    api project(':bridge')
+}

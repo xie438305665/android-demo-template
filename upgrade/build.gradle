@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+apply from: '../gradle/VERSIONS.gradle'
+
+android {
+    compileSdkVersion localVersion.compileSdkVersion
+    defaultConfig {
+        minSdkVersion localVersion.minSdkVersion
+        targetSdkVersion localVersion.targetSdkVersion
+        versionCode localVersion.versionCode
+        versionName localVersion.versionName
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    compileOnly "com.android.support:appcompat-v7:$apiVersion.supportVersion"
+    compileOnly("com.ydevelop:rxNetWork:$apiVersion.rxNetWorkVersion") {
+        exclude group: "com.android.support"
+    }
+    compileOnly("com.liulishuo.filedownloader:library:$apiVersion.downloadVersion") {
+        exclude group: "com.android.support"
+    }
+}

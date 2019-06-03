@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.greenrobot.greendao'
+apply from: '../gradle/VERSIONS.gradle'
+
+android {
+    compileSdkVersion localVersion.compileSdkVersion
+    defaultConfig {
+        minSdkVersion localVersion.minSdkVersion
+        targetSdkVersion localVersion.targetSdkVersion
+        versionCode localVersion.versionCode
+        versionName localVersion.versionName
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    greendao {
+        schemaVersion localVersion.greendaoVersion
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compileOnly "org.greenrobot:greendao:$apiVersion.greendaoVersion"
+    compileOnly "com.google.code.gson:gson:$apiVersion.gsonVersion"
+}

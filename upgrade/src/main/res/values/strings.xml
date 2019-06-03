@@ -1,0 +1,10 @@
+<resources>
+    <string name="upgrade_finder_error">获取下载目录出错…</string>
+    <string name="upgrade_title">软件更新</string>
+    <string name="upgrade_tips_message">检测到新版本,确定更新吗？</string>
+    <string name="upgrade_no_tips_message">未检测到新版本</string>
+    <string name="upgrade_net_error">网络错误</string>
+    <string name="upgrade_error_file_outofspace">内存容量不足</string>
+    <string name="upgrade_loading">正在下载</string>
+    <string name="upgrade_error">下载出错,请重新下载</string>
+</resources>

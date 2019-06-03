@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary_8">#84b581</color>
+    <color name="colorPrimary_18">#EEFCEE</color>
+    <color name="colorLoadingBg">#5d000000</color>
+    <color name="colorPrimary">#62b75d</color>
+    <color name="colorPrimaryDark">#62b75d</color>
+    <color name="colorAccent">#62b75d</color>
+    <color name="colorRMSwitch">#62b75d</color>
+    <color name="colorWhite">#FFFFFFFF</color>
+    <color name="colorBlue">#50B8EC</color>
+    <color name="colorRed_10">#F8887F</color>
+    <color name="colorRed">#c00811</color>
+    <color name="colorRed_12">#c55555</color>
+    <color name="colorGray">#a49d9d</color>
+    <color name="colorGray_10">#F6F6F6</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorGreen">#62B75D</color>
+    <color name="colorOrange">#FCAB42</color>
+    <color name="tab_host_top_check_false">#505050</color>
+    <color name="tab_host_top_check_true">#2f2f2f</color>
+    <color name="colorText">#707070</color>
+    <color name="colorFillScoreBottom">#D6DCE4</color>
+    <color name="colorScoreBack">#EFF0F1</color>
+    <color name="colorLine">#fff0f0f0</color>
+    <color name="allot_task_bar">#ffeff0f1</color>
+    <color name="colorRecyclerLine">#fff0f0f0</color>
+    <color name="colorDivider">#ffd2d2d2</color>
+    <color name="transparent90_white">#E5ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent50_blank">#80000000</color>
+    <color name="colorAnswerSpannable">#2B87FF</color>
+    <color name="colorProgressRed">#FF6B6B</color>
+    <color name="colorBackGround">#F8F8F8</color>
+
+</resources>

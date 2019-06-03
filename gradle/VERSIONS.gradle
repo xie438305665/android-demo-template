@@ -1,0 +1,48 @@
+ext.localVersion = [
+        compileSdkVersion: 28,
+        targetSdkVersion : 28,
+        minSdkVersion    : 19,
+
+        versionCode      : 1,
+        versionName      : '1.0.0',
+
+        greendaoVersion  : 1,
+]
+
+ext.appId = [
+        app: 'com.demo.template',
+]
+
+ext.apiVersion = [
+        gradleVersion            : '3.3.2',
+        greendaoVersion          : '3.2.2',
+        andResGuardVersionVersion: '1.2.13',
+
+        lifecycleJava8Version    : '1.1.1',
+        supportVersion           : '28.0.0',
+        constraintVersion        : '1.1.3',
+        butterknifeVersion       : '9.0.0-rc3',
+
+        albumVersion             : '0.0.4.2',
+        rvAdapterVersion         : '0.0.4',
+        editImageVersion         : 'beta01',
+        rxNetWorkVersion         : '0.1.8',
+        statusLayoutVersion      : 'beta',
+
+        routeApiVersion          : '1.4.1',
+        routeCompilerVersion     : '1.2.2',
+
+        downloadVersion          : '1.7.5',
+        gsonVersion              : '2.7',
+        dialogVersion            : '0.9.6.0',
+        glideVersion             : '4.8.0',
+        logVersion               : '1.6.0',
+        circleimageviewVersion   : '2.2.0',
+        lubanVersion             : '1.1.8',
+        buglyVersion             : '2.6.6.1',
+        toastVersion             : '5.0',
+        progressVersion          : '1.4.2',
+        rmswitchVersion          : '1.2.2',
+        chipsLayoutManagerVersion: '0.3.7@aar',
+]
+

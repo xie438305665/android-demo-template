@@ -1,0 +1,25 @@
+buildscript {
+    apply from: './gradle/VERSIONS.gradle'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$apiVersion.gradleVersion"
+        classpath "org.greenrobot:greendao-gradle-plugin:$apiVersion.greendaoVersion"
+        classpath "com.tencent.mm:AndResGuard-gradle-plugin:$apiVersion.andResGuardVersionVersion"
+        classpath "com.jakewharton:butterknife-gradle-plugin:$apiVersion.butterknifeVersion"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

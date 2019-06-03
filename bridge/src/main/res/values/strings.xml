@@ -1,0 +1,36 @@
+<resources>
+    <string name="permissions_denied">获取权限失败</string>
+    <string name="net_error">网络错误</string>
+    <string name="album_max_count">最多只能选择两张</string>
+    <string name="album_empty">没有检测到照片</string>
+    <string name="is_number">输入不规范,请输入整数</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="about_application">关于我们</string>
+    <string name="upload_header">上传头像</string>
+
+    <string name="login">登录</string>
+    <string name="logout">退出登录</string>
+    <string name="login_input_password">请输入密码</string>
+    <string name="login_input_user">请输入帐号</string>
+    <string name="logout_dialog_content">确认退出吗?</string>
+    <string name="login_user_empty">帐号不能为空</string>
+    <string name="login_password_empty">密码不能为空</string>
+    <string name="login_forget_password">忘记密码</string>
+
+    <string name="change_password">修改密码</string>
+    <string name="change_pw_verification">1.验证密码</string>
+    <string name="change_pw_new">2.设置新密码</string>
+    <string name="change_pw_verification_hint">请输入当前密码</string>
+    <string name="change_pw_new_again_tips">请再次输入新密码</string>
+    <string name="change_pw_new_hint_tips">请输入新密码</string>
+    <string name="change_old_pw_empty">请输入旧密码</string>
+    <string name="change_pw_empty">密码不能为空</string>
+    <string name="change_pw_success">密码修改成功</string>
+
+    <string name="exit_hints">再按一次退出程序</string>
+    <string name="about_version">V%s</string>
+    <string name="remove_disk_cache">缓存大小:%s(点击清除)</string>
+    <string name="upgrade">检测更新</string>
+
+</resources>

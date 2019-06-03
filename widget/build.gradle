@@ -1,0 +1,21 @@
+apply plugin: 'com.android.library'
+apply from: '../gradle/VERSIONS.gradle'
+android {
+    compileSdkVersion localVersion.compileSdkVersion
+    defaultConfig {
+        minSdkVersion localVersion.minSdkVersion
+        targetSdkVersion localVersion.targetSdkVersion
+        versionCode localVersion.versionCode
+        versionName localVersion.versionName
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compileOnly "com.android.support:appcompat-v7:$apiVersion.supportVersion"
+    compileOnly "com.android.support:design:$apiVersion.supportVersion"
+    compileOnly "me.zhanghai.android.materialprogressbar:library:$apiVersion.progressVersion"
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp.60"
+    android:background="@color/colorWhite"
+    android:padding="@dimen/dp.10">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_user_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/dp.10"
+        android:drawablePadding="@dimen/dp.10"
+        android:gravity="center"
+        android:textColor="@color/colorText"
+        tools:text="手机号" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_user_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginEnd="@dimen/dp.10"
+        android:textColor="@color/colorText"
+        tools:text="1333333333" />
+
+</FrameLayout>

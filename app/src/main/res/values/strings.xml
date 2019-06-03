@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SaaS</string>
+    <string name="bottom_title_read">阅卷</string>
+    <string name="bottom_title_user">我的</string>
+    <string name="change_password_title">修改密码</string>
+    <string name="all_mechanism">全部机构</string>
+</resources>

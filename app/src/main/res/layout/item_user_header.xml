@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp.120"
+    android:background="@color/colorWhite"
+    android:orientation="horizontal"
+    android:padding="@dimen/dp.10">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_item_header"
+        android:layout_width="@dimen/dp.60"
+        android:layout_height="@dimen/dp.60"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/dp.20" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_item_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/colorText"
+        tools:text="测试" />
+</LinearLayout>
