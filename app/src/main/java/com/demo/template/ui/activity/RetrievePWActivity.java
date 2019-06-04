@@ -16,7 +16,6 @@ import com.demo.template.R;
 import com.demo.template.annotation.RetrievePWType;
 import com.demo.template.mvp.presenter.impl.RetrievePwPresenterImpl;
 import com.demo.template.mvp.view.RetrievePwView;
-import com.hjq.toast.ToastUtils;
 
 import butterknife.BindString;
 import butterknife.BindView;
@@ -35,6 +34,8 @@ public class RetrievePWActivity extends MVPActivity<RetrievePwPresenterImpl, Str
     AppCompatTextView mSettingNewPw;
     @BindView(R.id.tv_retrieve_fill_user)
     AppCompatTextView mFillUser;
+    @BindView(R.id.tv_verification_result)
+    AppCompatTextView mVerificationResult;
 
     @BindView(R.id.et_retrieve_user_verification)
     AppCompatEditText mEtVerification;
@@ -78,6 +79,7 @@ public class RetrievePWActivity extends MVPActivity<RetrievePwPresenterImpl, Str
         mEtCode.setOnFocusChangeListener(this);
         keyboardStatusDetector = new KeyboardStatusDetector(this);
         mRootView.getViewTreeObserver().addOnGlobalLayoutListener(keyboardStatusDetector);
+        ViewUtils.gone(mVerificationResult);
     }
 
     @Override
@@ -102,6 +104,7 @@ public class RetrievePWActivity extends MVPActivity<RetrievePwPresenterImpl, Str
                 mPresenter.onVerification(mEtVerification.getText().toString().trim());
                 break;
             case RetrievePWType.VERIFICATION:
+                ViewUtils.goneView(mVerificationResult);
                 ViewUtils.visibleView(mEtCode, mEtVerification);
                 mEtVerification.setHint(isSuccess ? pwNewHint : userHint);
                 mEtCode.setHint(isSuccess ? pwNewAgainTipsHint : codeHint);
@@ -119,17 +122,16 @@ public class RetrievePWActivity extends MVPActivity<RetrievePwPresenterImpl, Str
 
     @Override
     public void onVerification(boolean isSuccess) {
+        ViewUtils.visibleView(mVerificationResult);
+        ViewUtils.goneView(mEtCode, mEtVerification);
         this.isSuccess = isSuccess;
         type = RetrievePWType.VERIFICATION;
         mOk.setText(isSuccess ? btnNextStr : btnPreStr);
-        ViewUtils.goneView(mEtCode, mEtVerification);
+        mVerificationResult.setText(isSuccess ? successToast : errorToast);
         if (isSuccess) {
             mEtVerification.getText().clear();
             mEtCode.getText().clear();
-            ToastUtils.show(successToast);
-            return;
         }
-        ToastUtils.show(errorToast);
     }
 
     @Override
