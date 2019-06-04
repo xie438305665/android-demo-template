@@ -21,6 +21,7 @@ import butterknife.OnClick;
 
 /**
  * @author xcl
+ * 修改密码
  */
 public class ChangePWActivity extends MVPActivity<ChangePwPresenterImpl, String> implements ChangePwView, KeyboardStatusDetector.KeyboardListener {
 

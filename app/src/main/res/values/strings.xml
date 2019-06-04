@@ -2,6 +2,16 @@
     <string name="app_name">SaaS</string>
     <string name="bottom_title_read">阅卷</string>
     <string name="bottom_title_user">我的</string>
+    <string name="read_task_title">阅卷任务</string>
     <string name="change_password_title">修改密码</string>
     <string name="all_mechanism">全部机构</string>
+    <string name="fill_score_keyboard_title">打分键盘设置</string>
+    <string name="keyboard_title">本题分数</string>
+    <string name="keyboard_reverse_tips">倒序排列</string>
+    <string name="keyboard_join_tips">加入0.5分</string>
+    <string name="keyboard_tips">* 点击分数设置打分的分数排序</string>
+    <string name="keyboard_sort_title">给分排序</string>
+    <string name="keyboard_again_reverse">重新排序</string>
+    <string name="keyboard_save">保存</string>
+    <string name="start_read_btn">开始阅卷</string>
 </resources>

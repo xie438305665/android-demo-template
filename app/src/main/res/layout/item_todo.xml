@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/tv_todo_mechanism"
@@ -23,6 +23,9 @@
         tools:text="2019-6-03" />
 
     <android.support.v7.widget.AppCompatTextView
+        android:ellipsize="end"
+        android:lines="1"
+        android:maxLength="15"
         android:id="@+id/tv_todo_exam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,6 +48,27 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_todo_type"
-        tools:text="数学" />
+        tools:text="数学 | 阅卷进度: 0/130" />
 
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_todo_read_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp.10"
+        app:layout_constraintStart_toEndOf="@+id/tv_todo_subject"
+        app:layout_constraintTop_toBottomOf="@+id/tv_todo_exam"
+        tools:text=" 问题卷: 8" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_todo_start_read"
+        android:layout_width="@dimen/dp.100"
+        android:layout_height="@dimen/dp.30"
+        android:layout_margin="@dimen/dp.10"
+        android:background="@drawable/selector_start_read_btn_bg"
+        android:text="@string/start_read_btn"
+        android:textColor="@drawable/selector_start_read_text"
+        android:textSize="@dimen/sp.16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

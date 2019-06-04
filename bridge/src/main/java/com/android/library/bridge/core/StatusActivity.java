@@ -31,7 +31,7 @@ public abstract class StatusActivity extends BaseActivity implements OnStatusCli
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        StatusBarUtil.darkStyle(this, UIUtils.getColor(R.color.colorBackGround));
+        StatusBarUtil.darkStyle(this, UIUtils.getColor(R.color.colorWhite));
         super.onCreate(savedInstanceState);
         KLog.d(getClass().getSimpleName());
         ActivityUtils.addActivity(this);

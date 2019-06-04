@@ -24,6 +24,7 @@ import butterknife.BindView;
 
 /**
  * @author xcl
+ * 主界面
  */
 @Route(path = RoutePath.MAIN)
 public class MainActivity extends MVPActivity<MainPresenterImpl, Object> implements MainView {

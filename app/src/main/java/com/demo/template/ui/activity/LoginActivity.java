@@ -24,6 +24,7 @@ import butterknife.OnClick;
 
 /**
  * @author xcl
+ * 登录
  */
 @Route(path = RoutePath.LOGIN)
 public class LoginActivity extends MVPActivity<LoginPresenterImpl, Object> implements LoginView, KeyboardStatusDetector.KeyboardListener {

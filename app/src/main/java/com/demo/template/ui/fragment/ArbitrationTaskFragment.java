@@ -12,9 +12,11 @@ import android.widget.Button;
 import com.android.library.bridge.adapter.SimpleAdapter;
 import com.android.library.bridge.core.MVPFragment;
 import com.demo.template.R;
+import com.demo.template.mvp.presenter.impl.ArbitrationTaskPresenterImpl;
 import com.demo.template.mvp.presenter.impl.TODOPresenterImpl;
+import com.demo.template.mvp.view.ArbitrationTaskView;
 import com.demo.template.mvp.view.TODOView;
-import com.demo.template.ui.activity.ReadTaskActivity;
+import com.socks.library.KLog;
 import com.xadapter.holder.XViewHolder;
 import com.xadapter.listener.LoadListener;
 import com.xadapter.listener.OnXBindListener;
@@ -27,28 +29,28 @@ import butterknife.BindView;
 /**
  * @author xcl
  * @create 2019/5/30
- * 待阅卷
+ * 仲裁任务
  */
-public class TODOFragment extends MVPFragment<TODOPresenterImpl, List<Object>>
-        implements TODOView, LoadListener, OnXBindListener<Object> {
+public class ArbitrationTaskFragment extends MVPFragment<ArbitrationTaskPresenterImpl, List<Object>>
+        implements ArbitrationTaskView, LoadListener, OnXBindListener<Object> {
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
 
     private SimpleAdapter<Object> mAdapter;
     private int mPage = 1;
 
-    public static TODOFragment newInstance() {
-        return new TODOFragment();
+    public static ArbitrationTaskFragment newInstance() {
+        return new ArbitrationTaskFragment();
     }
 
     @Override
-    protected TODOPresenterImpl initPresenter() {
-        return new TODOPresenterImpl(this);
+    protected ArbitrationTaskPresenterImpl initPresenter() {
+        return new ArbitrationTaskPresenterImpl(this);
     }
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_todo;
+        return R.layout.fragment_arbitration_task;
     }
 
     @Override
@@ -84,7 +86,7 @@ public class TODOFragment extends MVPFragment<TODOPresenterImpl, List<Object>>
     public void onXBind(XViewHolder holder, int position, Object o) {
         Button btnStartRead = holder.getButton(R.id.btn_todo_start_read);
         btnStartRead.setOnClickListener(v -> {
-            ReadTaskActivity.start();
+            KLog.d();
         });
     }
 

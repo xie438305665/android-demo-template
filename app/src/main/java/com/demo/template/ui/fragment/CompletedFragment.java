@@ -10,15 +10,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.library.bridge.adapter.SimpleAdapter;
+import com.android.library.bridge.core.MVPFragment;
 import com.demo.template.R;
+import com.demo.template.mvp.presenter.impl.CompletePresenterImpl;
+import com.demo.template.mvp.view.CompleteView;
 import com.socks.library.KLog;
 import com.xadapter.holder.XViewHolder;
 import com.xadapter.listener.LoadListener;
 import com.xadapter.listener.OnXBindListener;
-import com.demo.template.mvp.presenter.impl.CompletePresenterImpl;
-import com.demo.template.mvp.view.CompleteView;
-import com.android.library.bridge.adapter.SimpleAdapter;
-import com.android.library.bridge.core.MVPFragment;
 
 import java.util.List;
 
@@ -26,8 +26,9 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * @Author xcl
- * @CreateDate 2019/5/30
+ * @author xcl
+ * @create 2019/5/30
+ * 已完成
  */
 public class CompletedFragment extends MVPFragment<CompletePresenterImpl, List<Object>> implements CompleteView, LoadListener, OnXBindListener<Object> {
     @BindView(R.id.recyclerView)

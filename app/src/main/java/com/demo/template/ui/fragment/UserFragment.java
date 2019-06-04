@@ -34,6 +34,7 @@ import static com.demo.template.ui.adapter.UserAdapterListener.RECYCLER_LINE;
 
 /**
  * @author xcl
+ * 我的
  */
 public class UserFragment extends MVPFragment {
     @BindView(R.id.recyclerView)

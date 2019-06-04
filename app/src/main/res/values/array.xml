@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="tab_layout_title_array">
-        <item>待完成</item>
+    <string-array name="read_tab_layout_title_array">
+        <item>待阅卷</item>
         <item>已完成</item>
+    </string-array>
+    <string-array name="read_task_tab_layout_title_array">
+        <item>阅卷任务</item>
+        <item>仲裁任务</item>
+        <item>重阅任务</item>
+        <item>问题卷任务</item>
     </string-array>
 </resources>

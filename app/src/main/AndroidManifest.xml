@@ -41,16 +41,19 @@
             android:name=".ui.activity.LoginActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.activity.AboutActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".ui.activity.ChangePWActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
+        <activity
+            android:name=".ui.activity.ScoreKeyboardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.ReadTaskActivity"
+            android:screenOrientation="portrait" />
         <meta-data
             android:name="android.webkit.WebView.EnableSafeBrowsing"
             android:value="true" />

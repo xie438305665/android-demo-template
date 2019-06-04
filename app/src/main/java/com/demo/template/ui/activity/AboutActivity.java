@@ -21,6 +21,7 @@ import butterknife.OnClick;
 
 /**
  * @author xcl
+ * 关于我们
  */
 public class AboutActivity extends MVPActivity {
 
