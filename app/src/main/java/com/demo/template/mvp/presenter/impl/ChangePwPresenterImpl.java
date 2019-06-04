@@ -33,7 +33,7 @@ public class ChangePwPresenterImpl extends MVPresenterImpl<ChangePwView> impleme
 //
 //                    @Override
 //                    protected void onNetSuccess(@Nullable String data) {
-//                        getView().onNew();
+//                        getView().onSettingNewPw();
 //                        getView().onVerificationSuccess();
 //                        getView().onOkEnable(true);
 //                    }

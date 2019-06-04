@@ -12,7 +12,6 @@ import com.android.library.bridge.util.UIUtils;
 import com.android.library.widget.custom.CustomViewPager;
 import com.demo.template.R;
 import com.demo.template.ui.adapter.ReadTaskAdapter;
-import com.socks.library.KLog;
 
 import butterknife.BindDimen;
 import butterknife.BindView;
@@ -68,7 +67,7 @@ public class ReadTaskActivity extends MVPActivity {
     @Override
     public void onRightClick() {
         super.onRightClick();
-        KLog.d();
+        ExamDetailsActivity.start();
     }
 
     @Override

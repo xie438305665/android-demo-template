@@ -62,9 +62,6 @@ public class UserAdapterListener extends SimpleXMultiAdapterListener<UserMultiEn
                 DrawableUtils.setUserItemIcon(title, userMultiEntity.icon);
                 DrawableUtils.setUserSignItemIcon(sign, UIUtils.getDrawable(R.drawable.ic_arrow_forward_light_detail));
                 break;
-            case RECYCLER_FOOTER:
-                holder.getView(R.id.btn_user_logout).setOnClickListener(v -> MDialogUtils.logout(activity, (dialog, which) -> User.quit()));
-                break;
             default:
                 break;
         }

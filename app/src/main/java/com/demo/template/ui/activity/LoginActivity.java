@@ -10,14 +10,14 @@ import android.text.TextWatcher;
 import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.demo.template.BuildConfig;
-import com.demo.template.R;
-import com.demo.template.mvp.presenter.impl.LoginPresenterImpl;
-import com.demo.template.mvp.view.LoginView;
 import com.android.library.bridge.RoutePath;
 import com.android.library.bridge.core.MVPActivity;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.widget.detector.KeyboardStatusDetector;
+import com.demo.template.BuildConfig;
+import com.demo.template.R;
+import com.demo.template.mvp.presenter.impl.LoginPresenterImpl;
+import com.demo.template.mvp.view.LoginView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -103,10 +103,15 @@ public class LoginActivity extends MVPActivity<LoginPresenterImpl, Object> imple
         mSubMit.setEnabled(true);
     }
 
-    @OnClick(R.id.login_btn_sm)
-    public void onViewClicked() {
-        UIUtils.startActivity(MainActivity.class);
+    @OnClick({R.id.login_btn_sm, R.id.login_tv_retrieve_pw})
+    public void onClick(View view) {
+        if (R.id.login_btn_sm == view.getId()) {
+            UIUtils.startActivity(MainActivity.class);
+            finish();
 //        mPresenter.check(mUser.getText().toString().trim(), mPw.getText().toString().trim());
+            return;
+        }
+        UIUtils.startActivity(RetrievePWActivity.class);
     }
 
     @Override

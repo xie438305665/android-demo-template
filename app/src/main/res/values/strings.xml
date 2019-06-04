@@ -3,7 +3,9 @@
     <string name="bottom_title_read">阅卷</string>
     <string name="bottom_title_user">我的</string>
     <string name="read_task_title">阅卷任务</string>
+    <string name="exam_details_title">试卷详情</string>
     <string name="change_password_title">修改密码</string>
+    <string name="retrieve_password_title">找回密码</string>
     <string name="all_mechanism">全部机构</string>
     <string name="fill_score_keyboard_title">打分键盘设置</string>
     <string name="keyboard_title">本题分数</string>
@@ -14,4 +16,18 @@
     <string name="keyboard_again_reverse">重新排序</string>
     <string name="keyboard_save">保存</string>
     <string name="start_read_btn">开始阅卷</string>
+    <string name="exam_details_organizer_text">组织者: \t\t%s</string>
+    <string name="exam_details_date_text">考试时间: \t\t%s</string>
+    <string name="exam_details_subject_text">科目: \t\t%s</string>
+    <string name="exam_details_text">试卷详情: </string>
+
+    <string name="retrieve_edit_input_user_hint">请输入账号</string>
+    <string name="retrieve_edit_input_code_hint">请输入验证码</string>
+    <string name="retrieve_fill_user">填写帐号</string>
+    <string name="retrieve_verification_user">验证身份</string>
+    <string name="retrieve_setting_pw_new">设置新密码</string>
+    <string name="retrieve_user_verification_success_toast">该账号身份验证成功，清点击下一步</string>
+    <string name="retrieve_user_verification_error_toast">该账号不是合作账号，无法登录</string>
+    <string name="retrieve_next_btn">下一步</string>
+    <string name="retrieve_pre_btn">返回上一步</string>
 </resources>

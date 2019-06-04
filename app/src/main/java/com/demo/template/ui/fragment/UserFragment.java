@@ -9,8 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import com.android.library.bridge.User;
 import com.android.library.bridge.core.MVPFragment;
 import com.android.library.bridge.core.base.IPresenter;
+import com.android.library.bridge.util.MDialogUtils;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.net.entity.UserEntity;
 import com.demo.template.R;
@@ -52,6 +54,7 @@ public class UserFragment extends MVPFragment {
 
     private static final int CHANGE_PW = 1;
     private static final int ABOUT_APPLICATION = 3;
+    private static final int LOGOUT = 4;
     private UserEntity userEntity;
 
     public static UserFragment newInstance() {
@@ -82,6 +85,9 @@ public class UserFragment extends MVPFragment {
                             break;
                         case ABOUT_APPLICATION:
                             UIUtils.startActivity(AboutActivity.class);
+                            break;
+                        case LOGOUT:
+                            MDialogUtils.logout(mActivity, (dialog, which) -> User.quit());
                             break;
                         default:
                             break;

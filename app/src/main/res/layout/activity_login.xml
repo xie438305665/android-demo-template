@@ -52,6 +52,7 @@
                 android:theme="@style/LoginEditText" />
 
             <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/login_tv_retrieve_pw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
