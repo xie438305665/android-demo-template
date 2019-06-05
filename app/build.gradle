@@ -69,9 +69,9 @@ android {
     sourceSets{
         main{
             res.srcDirs=[
-                    'src/main/res/drawable/template',
-                    'src/main/res/layout/template',
-                    'src/main/res/drawable-xxhdpi/template',
+                    'src/main/res/drawable/grade',
+                    'src/main/res/layout/grade',
+                    'src/main/res/drawable-xxhdpi/grade',
                     'src/main/res'
             ]
         }

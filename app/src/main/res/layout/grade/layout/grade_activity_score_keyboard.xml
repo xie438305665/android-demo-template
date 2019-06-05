@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp.40"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp.8">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="@dimen/dp.0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/keyboard_title"
+                android:textColor="@color/colorText" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/keyboard_reverse_tips"
+                    android:textColor="@color/colorText" />
+
+                <com.rm.rmswitch.RMSwitch
+                    android:id="@+id/keyboard_switch_reverse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp.10"
+                    app:switchDesign="android"
+                    app:switchToggleCheckedColor="@color/colorRMSwitch"
+                    app:switchToggleNotCheckedColor="@color/colorGray" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/join_root_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/keyboard_join_tips"
+                    android:textColor="@color/colorText" />
+
+                <com.rm.rmswitch.RMSwitch
+                    android:id="@+id/keyboard_switch_join"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp.10"
+                    app:switchDesign="android"
+                    app:switchToggleCheckedColor="@color/colorRMSwitch"
+                    app:switchToggleNotCheckedColor="@color/colorGray" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp.10"
+            android:padding="@dimen/dp.8"
+            android:text="@string/keyboard_tips"
+            android:textColor="@color/colorRed_10" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp.8"
+            android:text="@string/keyboard_sort_title"
+            android:textColor="@color/colorText" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/sortRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp.20">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_keyboard_again_reverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/space"
+                android:layout_marginEnd="@dimen/dp.10"
+                android:background="@drawable/grade_selector_keyboard_again_reverse_btn"
+                android:text="@string/keyboard_again_reverse"
+                android:textColor="@color/colorRMSwitch"
+                android:visibility="gone" />
+
+            <Space
+                android:id="@+id/space"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_keyboard_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/space"
+                android:layout_marginStart="@dimen/dp.10"
+                android:background="@drawable/grade_selector_keyboard_save_btn"
+                android:text="@string/keyboard_save"
+                android:textColor="@color/colorWhite"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

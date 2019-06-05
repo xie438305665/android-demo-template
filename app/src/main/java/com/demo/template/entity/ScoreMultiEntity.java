@@ -59,11 +59,11 @@ public class ScoreMultiEntity implements MultiCallBack, Parcelable {
     public static List<ScoreMultiEntity> getScoreDrawerMenu(@QuestionType int type, boolean problem, boolean arbitration) {
         List<ScoreMultiEntity> menuList = new ArrayList<>();
         menuList.add(new ScoreMultiEntity(R.drawable.ic_arrow_forward_light, "设置", DrawerItemViewType.HEADER, DrawerPosition.SETTING));
-        menuList.add(new ScoreMultiEntity(R.drawable.ic_score_detail, "试题详情", DrawerItemViewType.ITEM, DrawerPosition.QUESTIONS_DETAIL));
+        menuList.add(new ScoreMultiEntity(R.drawable.grade_ic_score_detail, "试题详情", DrawerItemViewType.ITEM, DrawerPosition.QUESTIONS_DETAIL));
         if (type == QuestionType.FILL && !problem) {
-            menuList.add(new ScoreMultiEntity(R.drawable.ic_score_num, "每屏显示数量", DrawerItemViewType.ITEM, DrawerPosition.FILL_NUM));
+            menuList.add(new ScoreMultiEntity(R.drawable.grade_ic_score_num, "每屏显示数量", DrawerItemViewType.ITEM, DrawerPosition.FILL_NUM));
         }
-        menuList.add(new ScoreMultiEntity(R.drawable.ic_score_keybaord_setting, "打分键盘设置", DrawerItemViewType.ITEM, DrawerPosition.KEYBOARD));
+        menuList.add(new ScoreMultiEntity(R.drawable.grade_ic_score_keybaord_setting, "打分键盘设置", DrawerItemViewType.ITEM, DrawerPosition.KEYBOARD));
         if (type == QuestionType.ANSWER && !problem) {
             menuList.add(new ScoreMultiEntity(R.drawable.ic_land, "横屏", DrawerItemViewType.ITEM, DrawerPosition.LAND));
         }
@@ -71,7 +71,7 @@ public class ScoreMultiEntity implements MultiCallBack, Parcelable {
             menuList.add(new ScoreMultiEntity(R.drawable.ic_un_score, "只显示未阅卷", DrawerItemViewType.ITEM, DrawerPosition.UN_SCORE));
         }
         if (!problem) {
-            menuList.add(new ScoreMultiEntity(R.drawable.ic_score_automatic_submit, "自动提交", DrawerItemViewType.ITEM, DrawerPosition.AUTOMATIC_SUBMIT));
+            menuList.add(new ScoreMultiEntity(R.drawable.grade_ic_score_automatic_submit, "自动提交", DrawerItemViewType.ITEM, DrawerPosition.AUTOMATIC_SUBMIT));
         }
         return menuList;
     }

@@ -117,9 +117,9 @@ public class AnswerAnnotationLayout extends ScoreLayout {
                     @Override
                     public void onAnimationEnd(Animator animation) {
                         if (callOutVisible()) {
-                            scoreUnfold.setImageResource(R.drawable.ic_score_annotation_collapse);
+                            scoreUnfold.setImageResource(R.drawable.grade_ic_score_annotation_collapse);
                         } else {
-                            scoreUnfold.setImageResource(R.drawable.ic_score_annotation_unfold);
+                            scoreUnfold.setImageResource(R.drawable.grade_ic_score_annotation_unfold);
                         }
                     }
                 });
@@ -159,7 +159,7 @@ public class AnswerAnnotationLayout extends ScoreLayout {
 
     private void initAnnotationAdapter() {
         annotationAdapter = (XRecyclerViewAdapter<AnnotationEntity>) new XRecyclerViewAdapter<AnnotationEntity>()
-                .setLayoutId(R.layout.item_score_annotation)
+                .setLayoutId(R.layout.grade_item_score_annotation)
                 .setOnItemClickListener((view, position, info) -> {
                     for (AnnotationEntity entity : annotationAdapter.getData()) {
                         entity.setChecked(entity.getLabelId() == info.getLabelId());
@@ -210,6 +210,6 @@ public class AnswerAnnotationLayout extends ScoreLayout {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.layout_answer_annotation;
+        return R.layout.grade_layout_answer_annotation;
     }
 }

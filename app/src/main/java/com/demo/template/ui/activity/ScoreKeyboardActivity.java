@@ -145,7 +145,7 @@ public class ScoreKeyboardActivity extends MVPActivity {
     private void initSelectAdapter() {
         selectAdapter = (XRecyclerViewAdapter<KeyboardScoreEntity>) new XRecyclerViewAdapter<KeyboardScoreEntity>()
                 .initXData(keyboardEntity.getSelectList() == null ? new ArrayList<>() : keyboardEntity.getSelectList())
-                .setLayoutId(R.layout.item_key_board_sort)
+                .setLayoutId(R.layout.grade_item_key_board_sort)
                 .onXBind((holder, position, entity) -> holder.setTextView(R.id.item_key_board_tv, entity.getScore()));
         selectRecyclerView.setHasFixedSize(true);
         selectRecyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 6));
@@ -155,7 +155,7 @@ public class ScoreKeyboardActivity extends MVPActivity {
     private void initScoreAdapter() {
         scoreAdapter = (XRecyclerViewAdapter<KeyboardScoreEntity>) new XRecyclerViewAdapter<KeyboardScoreEntity>()
                 .initXData(newScoreData())
-                .setLayoutId(R.layout.item_key_board)
+                .setLayoutId(R.layout.grade_item_key_board)
                 .onXBind((holder, position, entity) -> {
                     holder.setTextView(R.id.item_key_board_tv, entity.getScore());
                     holder.getTextView(R.id.item_key_board_tv).setSelected(entity.isSelect());
@@ -184,7 +184,7 @@ public class ScoreKeyboardActivity extends MVPActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_score_keyboard;
+        return R.layout.grade_activity_score_keyboard;
     }
 
     @Override
