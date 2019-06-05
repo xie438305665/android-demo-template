@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.android.library.widget.custom.CustomViewPager
+        android:id="@+id/score_child_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/answer_previous_page"
+        android:layout_width="@dimen/dp.30"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|start"
+        android:src="@drawable/grade_ic_score_prev_page"
+        android:visibility="gone" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/answer_next_page"
+        android:layout_width="@dimen/dp.30"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|end"
+        android:src="@drawable/grade_ic_score_next_page"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <com.demo.template.widget.answer.AnswerAnnotationLayout
+        android:id="@+id/annotation_root_view"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp.46"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/dp.8"
+        android:gravity="center_vertical" />
+
+</FrameLayout>

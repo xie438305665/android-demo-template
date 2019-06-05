@@ -41,4 +41,12 @@ public @interface BundleKey {
      * 查看答案
      */
     String LOOK_ANSWER = "LOOK:ANSWER";
+    /**
+     * 阅卷数据
+     */
+    String GRADE_SCORE_ENTITY = "GRADE_SCORE_ENTITY";
+    /**
+     * 是否刷新
+     */
+    String GRADE_SCORE_REFRESH = "score:refresh";
 }

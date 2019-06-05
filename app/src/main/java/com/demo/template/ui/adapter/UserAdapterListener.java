@@ -3,17 +3,15 @@ package com.demo.template.ui.adapter;
 import android.app.Activity;
 import android.support.v7.widget.AppCompatTextView;
 
-import com.demo.template.R;
-import com.xadapter.adapter.multi.MultiCallBack;
-import com.xadapter.holder.XViewHolder;
-import com.demo.template.entity.UserMultiEntity;
-import com.android.library.bridge.User;
 import com.android.library.bridge.core.listener.SimpleXMultiAdapterListener;
-import com.android.library.bridge.util.DrawableUtils;
 import com.android.library.bridge.util.ImageLoaderUtils;
-import com.android.library.bridge.util.MDialogUtils;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.net.entity.UserEntity;
+import com.demo.template.R;
+import com.demo.template.entity.UserMultiEntity;
+import com.demo.template.utils.DrawableUtils;
+import com.xadapter.adapter.multi.MultiCallBack;
+import com.xadapter.holder.XViewHolder;
 
 /**
  * @author xcl

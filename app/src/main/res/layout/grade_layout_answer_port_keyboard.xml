@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/port_fraction_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:layout_toStartOf="@+id/port_fraction_more"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        tools:listitem="@layout/grade_item_fill_score_bottom_recycler" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/port_fraction_more"
+        android:layout_width="@dimen/dp.56"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="@string/grade_answer_score_bottom_recycler_text_more_new"
+        android:textColor="@color/grade_answer_score_fraction_more_text"
+        android:textSize="@dimen/sp.20" />
+
+</RelativeLayout>

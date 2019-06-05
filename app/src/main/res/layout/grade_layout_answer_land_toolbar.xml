@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp.70"
+    android:focusableInTouchMode="true">
+
+    <com.demo.template.widget.ScoreProgressLayout
+        android:id="@+id/score_progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp.20"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/answer_land_toolbar_finish"
+        android:layout_width="@dimen/dp.42"
+        android:layout_height="@dimen/dp.42"
+        android:src="@drawable/ic_arrow_forward_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/score_progress_layout" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/answer_land_toolbar_topic_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp.8"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/sp.18"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/answer_land_toolbar_finish"
+        app:layout_constraintTop_toBottomOf="@id/score_progress_layout"
+        tools:text="第12题" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/answer_land_toolbar_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp.10"
+        android:gravity="center"
+        android:textSize="@dimen/sp.16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/answer_land_toolbar_topic_count"
+        app:layout_constraintTop_toBottomOf="@id/score_progress_layout"
+        tools:text="正确率80%" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/answer_land_toolbar_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp.8"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/sp.16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/answer_land_toolbar_issues"
+        app:layout_constraintTop_toBottomOf="@id/score_progress_layout"
+        tools:text="王老吉" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/answer_land_toolbar_issues"
+        android:layout_width="@dimen/dp.35"
+        android:layout_height="@dimen/dp.35"
+        android:layout_marginEnd="@dimen/dp.10"
+        android:src="@drawable/grade_ic_score_keyboard_issues"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/answer_land_toolbar_et_fraction"
+        app:layout_constraintTop_toBottomOf="@id/score_progress_layout" />
+
+    <com.demo.template.widget.ScoreFractionEditTextLayout
+        android:id="@+id/answer_land_toolbar_et_fraction"
+        android:layout_width="@dimen/dp.50"
+        android:layout_height="@dimen/dp.28"
+        android:layout_marginEnd="@dimen/dp.6"
+        android:gravity="center"
+        android:imeOptions="actionSend|flagNoExtractUi"
+        android:inputType="numberDecimal"
+        android:padding="@dimen/dp.2"
+        android:textSize="@dimen/sp.16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/answer_land_toolbar_max_topic_score"
+        app:layout_constraintTop_toBottomOf="@id/score_progress_layout"
+        tools:background="@drawable/grade_selector_score_header_answer_fraction_et"
+        tools:text="20"
+        tools:textColor="@color/colorPrimary" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/answer_land_toolbar_max_topic_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp.10"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/sp.16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/answer_land_toolbar_more"
+        app:layout_constraintTop_toBottomOf="@id/score_progress_layout"
+        tools:text="  80分" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/answer_land_toolbar_more"
+        android:layout_width="@dimen/dp.42"
+        android:layout_height="@dimen/dp.42"
+        android:padding="@dimen/dp.10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/score_progress_layout"
+        app:srcCompat="@drawable/grade_ic_score_toolbar_more" />
+</android.support.constraint.ConstraintLayout>

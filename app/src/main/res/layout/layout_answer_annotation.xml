@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/grade_shape_score_annotation"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/dp.6"
+    android:paddingEnd="@dimen/dp.8">
+
+    <LinearLayout
+        android:id="@+id/gone_score_iv_call_out"
+        android:layout_width="@dimen/dp.0"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/score_annotation_delete"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/grade_selector_answer_score_annotation"
+            android:padding="@dimen/dp.8"
+            android:src="@drawable/grade_ic_score_annotation_delete" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/score_annotation_scribble"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/grade_selector_answer_score_annotation"
+            android:padding="@dimen/dp.8"
+            android:src="@drawable/grade_ic_score_annotation_scribble" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/score_annotation_text"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/grade_selector_answer_score_annotation"
+            android:padding="@dimen/dp.8"
+            android:src="@drawable/grade_ic_score_annotation_text" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/score_annotation_undo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/grade_selector_answer_score_annotation"
+            android:padding="@dimen/dp.8"
+            android:src="@drawable/grade_ic_score_annotation_undo" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/score_annotation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/grade_selector_answer_score_annotation"
+            android:padding="@dimen/dp.8"
+            android:src="@drawable/grade_ic_score_annotation" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/score_annotation_reduction"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/grade_selector_answer_score_annotation"
+            android:gravity="center"
+            android:padding="@dimen/dp.6"
+            android:text="@string/grade_score_reduction"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/sp.14" />
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/score_annotation_unfold"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/dp.10"
+        android:src="@drawable/ic_score_annotation_unfold" />
+</LinearLayout>

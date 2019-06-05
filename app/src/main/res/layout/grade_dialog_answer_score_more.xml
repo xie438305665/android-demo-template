@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFillScoreBottom"
+    android:orientation="vertical"
+    android:padding="@dimen/dp.6">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp.8">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/grade_dialog_answer_score_title" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/dialog_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:src="@drawable/ic_close" />
+
+    </FrameLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/dialog_answer_more_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp.240"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+
+    <FrameLayout
+        android:id="@+id/dialog_answer_bottom_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/dialog_answer_score_more_left_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:background="@drawable/grade_selector_dialog_score_more_btn"
+            android:padding="@dimen/dp.8"
+            android:text="@string/grade_answer_more_20"
+            android:textColor="@color/grade_answer_score_more_text" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/dialog_answer_score_more_center_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp.6"
+            android:background="@drawable/grade_selector_dialog_score_more_btn"
+            android:padding="@dimen/dp.8"
+            android:text="@string/grade_answer_more_40"
+            android:textColor="@color/grade_answer_score_more_text" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/dialog_answer_score_more_right_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/dp.6"
+            android:background="@drawable/grade_selector_dialog_score_more_btn"
+            android:padding="@dimen/dp.8"
+            android:text="@string/grade_answer_more_60"
+            android:textColor="@color/grade_answer_score_more_text" />
+    </FrameLayout>
+
+</LinearLayout>
