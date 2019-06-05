@@ -5,9 +5,9 @@ import android.text.TextUtils;
 
 import com.android.library.bridge.util.UIUtils;
 import com.demo.template.R;
-import com.demo.template.ui.read.common.dialog.LookAnswerDialog;
-import com.demo.template.ui.read.newx.activity.ScoreActivity;
-import com.demo.template.ui.read.newx.adapter.ScoreAdapter;
+import com.demo.template.ui.template.common.dialog.LookAnswerDialog;
+import com.demo.template.ui.template.newx.activity.ScoreActivity;
+import com.demo.template.ui.template.newx.adapter.ScoreAdapter;
 import com.status.layout.Status;
 
 /**
