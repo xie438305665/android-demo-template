@@ -2,7 +2,7 @@ package com.demo.template.ui.grade.oldx.impl;
 
 import com.android.library.bridge.core.base.IView;
 import com.android.library.bridge.core.listener.SimpleNetZipSuccessListener;
-import com.android.library.bridge.key.Booleans;
+import com.android.library.bridge.annotation.Booleans;
 import com.demo.template.entity.ScoreZipEntity;
 import com.demo.template.annotation.GradeScoreType;
 import com.demo.template.annotation.ScorePageState;

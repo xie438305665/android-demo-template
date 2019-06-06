@@ -11,7 +11,7 @@ import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.android.library.bridge.RoutePath;
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.bridge.util.NumberUtils;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.net.entity.template.ScoreParameterEntity;
@@ -63,7 +63,7 @@ public class OldScoreActivity extends OldScoreNetActivity implements OnScoreOwnL
         getParameter().setScoreType(entity.getScoreType());
         resetData();
         boolean landscape = false;
-        if (getScoreType() == QuestionType.FILL && UIUtils.isLandscape(this)) {
+        if (getScoreType() == TopicType.FILL && UIUtils.isLandscape(this)) {
             landscape = true;
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
         }
@@ -76,7 +76,7 @@ public class OldScoreActivity extends OldScoreNetActivity implements OnScoreOwnL
     @Override
     public void onChangedFragment(boolean hasNext) {
         int scoreType = getScoreType();
-        if (scoreType == QuestionType.FILL) {
+        if (scoreType == TopicType.FILL) {
             setHasLand(false);
         }
         onClearAnswerEditTextFocus();
@@ -109,7 +109,7 @@ public class OldScoreActivity extends OldScoreNetActivity implements OnScoreOwnL
             return;
         }
         scoreHeader.updatePercentageAndSchedule(getGQEntity());
-        if (getScoreType() == QuestionType.ANSWER) {
+        if (getScoreType() == TopicType.ANSWER) {
             answerLandToolbar.updatePercentageAndSchedule(getGQEntity());
         }
     }
@@ -149,7 +149,7 @@ public class OldScoreActivity extends OldScoreNetActivity implements OnScoreOwnL
             return;
         }
         toolbar.setTitle(String.format(UIUtils.getString(R.string.grade_score_title), getGQEntity().getIndex()));
-        if (getScoreType() == QuestionType.ANSWER) {
+        if (getScoreType() == TopicType.ANSWER) {
             answerLandToolbar.setTitle(getGQEntity().getIndex());
         }
     }
@@ -161,7 +161,7 @@ public class OldScoreActivity extends OldScoreNetActivity implements OnScoreOwnL
             return;
         }
         keyboard.updateKeyboard(getScoreType(), markingGroupId, isProblem());
-        if (getScoreType() == QuestionType.ANSWER) {
+        if (getScoreType() == TopicType.ANSWER) {
             answerLandKeyboard.updateKeyboard(markingGroupId);
         }
     }
@@ -199,9 +199,9 @@ public class OldScoreActivity extends OldScoreNetActivity implements OnScoreOwnL
         if (UIUtils.checkNull(getScoreAdapter())) {
             return;
         }
-        if (getScoreType() == QuestionType.FILL) {
+        if (getScoreType() == TopicType.FILL) {
             getScoreAdapter().onFillScoreDrawerItemClick(position);
-        } else if (getScoreType() == QuestionType.ANSWER) {
+        } else if (getScoreType() == TopicType.ANSWER) {
             getScoreAdapter().onAnswerScoreDrawerItemClick(position);
         }
     }

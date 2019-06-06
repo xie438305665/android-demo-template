@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.bridge.core.base.IPresenter;
 import com.android.library.bridge.util.SpUtils;
 import com.android.library.bridge.util.UIUtils;
@@ -41,7 +41,7 @@ public abstract class ScoreGuideActivity<P extends IPresenter> extends BaseInitS
         if (isProblem()) {
             return null;
         }
-        String key = getScoreType() == QuestionType.FILL ? GuideType.FILL : GuideType.ANSWER;
+        String key = getScoreType() == TopicType.FILL ? GuideType.FILL : GuideType.ANSWER;
         int guideNum = SpUtils.getInt(key, 0);
         if (guideNum >= 2) {
             return null;
@@ -50,7 +50,7 @@ public abstract class ScoreGuideActivity<P extends IPresenter> extends BaseInitS
             scoreGuideView = new ScoreGuideView(this, getScoreType(), () -> SpUtils.setInt(key, guideNum + 1));
             scoreGuideView.setBackgroundColor(UIUtils.getColor(R.color.colorLoadingBg));
         }
-        if (getScoreType() == QuestionType.FILL) {
+        if (getScoreType() == TopicType.FILL) {
             showFillGuide = true;
         } else {
             showAnswerGuide = true;
@@ -59,10 +59,10 @@ public abstract class ScoreGuideActivity<P extends IPresenter> extends BaseInitS
     }
 
     @Override
-    public void showGuideView(@QuestionType int scoreType) {
+    public void showGuideView(@TopicType int scoreType) {
         scoreGuideView.setVisibility(View.VISIBLE);
         scoreGuideView.click(scoreType);
-        if (scoreType == QuestionType.FILL) {
+        if (scoreType == TopicType.FILL) {
             showFillGuide = true;
         } else {
             showAnswerGuide = true;
@@ -70,14 +70,14 @@ public abstract class ScoreGuideActivity<P extends IPresenter> extends BaseInitS
     }
 
     @Override
-    public boolean hasShowGuideView(@QuestionType int scoreType) {
+    public boolean hasShowGuideView(@TopicType int scoreType) {
         if (scoreGuideView == null) {
             return false;
         }
-        if (scoreType == QuestionType.FILL && showFillGuide) {
+        if (scoreType == TopicType.FILL && showFillGuide) {
             return false;
         }
-        if (scoreType == QuestionType.ANSWER && showAnswerGuide) {
+        if (scoreType == TopicType.ANSWER && showAnswerGuide) {
             return false;
         }
         return !showAnswerGuide || !showFillGuide;

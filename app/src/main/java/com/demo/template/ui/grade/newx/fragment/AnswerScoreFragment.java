@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.bridge.util.BitmapUtils;
 import com.android.library.bridge.util.NumberUtils;
 import com.android.library.bridge.util.UIUtils;
@@ -567,10 +567,10 @@ public class AnswerScoreFragment extends BaseScoreFragment implements AnswerScor
         return UIUtils.checkNotNull(getScoreActivity()) && TextUtils.isEmpty(getScoreActivity().getAnswerFraction());
     }
 
-    @QuestionType
+    @TopicType
     @Override
     public int getScoreType() {
-        return QuestionType.ANSWER;
+        return TopicType.ANSWER;
     }
 
     @Override

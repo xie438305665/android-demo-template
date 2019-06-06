@@ -10,14 +10,14 @@ import java.lang.annotation.RetentionPolicy;
  * @create 2019/4/1
  */
 @IntDef({
-        QuestionType.FILL,
-        QuestionType.ANSWER,
-        QuestionType.ENGLISH,
-        QuestionType.MULTIPLE_CHOICE,
-        QuestionType.ELECTIVE_QUESTION
+        TopicType.FILL,
+        TopicType.ANSWER,
+        TopicType.ENGLISH,
+        TopicType.MULTIPLE_CHOICE,
+        TopicType.ELECTIVE_QUESTION
 })
 @Retention(RetentionPolicy.SOURCE)
-public @interface QuestionType {
+public @interface TopicType {
     /**
      * 填空题
      */

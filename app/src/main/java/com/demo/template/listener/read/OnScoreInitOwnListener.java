@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.net.entity.template.ScoreParameterEntity;
 import com.demo.template.annotation.ReadUIMode;
 import com.demo.template.entity.ScoreMultiEntity;
@@ -24,9 +24,9 @@ public interface OnScoreInitOwnListener {
     /**
      * 更新侧边栏数据
      *
-     * @param type 试题type {@link QuestionType}
+     * @param type 试题type {@link TopicType}
      */
-    void onChangeDrawerMode(@QuestionType int type);
+    void onChangeDrawerMode(@TopicType int type);
 
     /**
      * 打开侧边栏
@@ -91,9 +91,9 @@ public interface OnScoreInitOwnListener {
     /**
      * 获取试题类型
      *
-     * @return {@link QuestionType}
+     * @return {@link TopicType}
      */
-    @QuestionType
+    @TopicType
     int getScoreType();
 
     /**

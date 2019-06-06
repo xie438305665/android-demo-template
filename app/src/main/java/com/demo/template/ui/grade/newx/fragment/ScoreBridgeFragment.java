@@ -3,7 +3,7 @@ package com.demo.template.ui.grade.newx.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.bridge.core.StatusFragment;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.net.entity.template.ScoreParameterEntity;
@@ -41,9 +41,9 @@ public class ScoreBridgeFragment extends StatusFragment {
         if (UIUtils.checkNull(parameter)) {
             return;
         }
-        if (scoreActivity.getScoreType() == QuestionType.ANSWER) {
+        if (scoreActivity.getScoreType() == TopicType.ANSWER) {
             bride = AnswerScoreFragment.newInstance(parameter);
-        } else if (scoreActivity.getScoreType() == QuestionType.FILL) {
+        } else if (scoreActivity.getScoreType() == TopicType.FILL) {
             bride = FillScoreFragment.newInstance(parameter);
         }
         getChildFragmentManager().beginTransaction().add(R.id.score_bridge_root_view, bride, bride.getClass().getSimpleName()).commitAllowingStateLoss();

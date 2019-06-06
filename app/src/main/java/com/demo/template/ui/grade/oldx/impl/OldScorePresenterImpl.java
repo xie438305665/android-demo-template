@@ -3,7 +3,7 @@ package com.demo.template.ui.grade.oldx.impl;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.bridge.core.MVPresenterImpl;
 import com.android.library.net.body.read.SubmitScoreBody;
 import com.demo.template.annotation.BundleKey;
@@ -32,7 +32,7 @@ public abstract class OldScorePresenterImpl extends MVPresenterImpl<OldScoreView
     }
 
     @Override
-    public void onSubmit(@NonNull String examGroupId, @NonNull String markingGroupId, @Nullable String classId, @NonNull ArrayList<SubmitScoreBody> list, @NonNull String fraction, @QuestionType int type) {
+    public void onSubmit(@NonNull String examGroupId, @NonNull String markingGroupId, @Nullable String classId, @NonNull ArrayList<SubmitScoreBody> list, @NonNull String fraction, @TopicType int type) {
 //        Observable<BaseEntity<GroupQuotaEntity>> groupQuota = NetRequest.single().getService().groupQuota(examGroupId, markingGroupId, classId).map(new NetFunc<>());
 //        Observable<BaseEntity<ScoreSubmitEntity>> submit = NetRequest.single().getService().scoreSubmit(list).map(new NetFunc<>());
 //        Observable<ScoreZipEntity> zip = Observable.zip(submit, groupQuota, (scoreSubmitEntityBaseEntity, groupQuotaEntityBaseEntity) -> new ScoreZipEntity().setGroupQuota(groupQuotaEntityBaseEntity.getData()));
@@ -62,7 +62,7 @@ public abstract class OldScorePresenterImpl extends MVPresenterImpl<OldScoreView
     }
 
     @Override
-    public void onProblemSubmit(@NonNull String examGroupId, @NonNull String markingGroupId, @Nullable String classId, @NonNull ArrayList<SubmitScoreBody> bodyList, @NonNull String fraction, @QuestionType int type) {
+    public void onProblemSubmit(@NonNull String examGroupId, @NonNull String markingGroupId, @Nullable String classId, @NonNull ArrayList<SubmitScoreBody> bodyList, @NonNull String fraction, @TopicType int type) {
 //        Observable<BaseEntity<ScoreSubmitEntity>> submit = NetRequest.single().getService().scoreProblemSubmit(bodyList).map(new NetFunc<>());
 //        NetRequest.single().getApi(GradeUrl.MARKING_PROBLEM_SUBMIT, submit.map(scoreSubmitEntityBaseEntity -> new ScoreZipEntity()), new SimpleNetZipSuccessListener<ScoreZipEntity>(getView()) {
 //            @Override
@@ -120,13 +120,13 @@ public abstract class OldScorePresenterImpl extends MVPresenterImpl<OldScoreView
     /**
      * 每屏显示多少页
      *
-     * @param type     {@link QuestionType}
+     * @param type     {@link TopicType}
      * @param pageSize count
      * @return {@link java.util.Map}
      */
-    HashMap<String, Integer> getPageSize(@QuestionType int type, int pageSize) {
+    HashMap<String, Integer> getPageSize(@TopicType int type, int pageSize) {
         HashMap<String, Integer> map = new HashMap<>();
-        if (type == QuestionType.FILL) {
+        if (type == TopicType.FILL) {
             map.put(BundleKey.PAGE_SIZE, pageSize);
         }
         return map;

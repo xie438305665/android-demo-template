@@ -7,7 +7,7 @@ import android.support.v4.view.PagerAdapter;
 import android.text.TextUtils;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.bridge.util.NumberUtils;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.net.body.read.SubmitScoreBody;
@@ -79,10 +79,10 @@ public class OldFillScoreFragment extends OldBaseScoreFragment implements OldFil
         return !UIUtils.checkNull(pagerAdapter.getCurrentFragment()) && pagerAdapter.getCurrentFragment().hasSubmit();
     }
 
-    @QuestionType
+    @TopicType
     @Override
     public int getScoreType() {
-        return QuestionType.FILL;
+        return TopicType.FILL;
     }
 
     @Override

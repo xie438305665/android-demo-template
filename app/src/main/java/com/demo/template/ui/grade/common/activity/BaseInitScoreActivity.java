@@ -12,24 +12,23 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.bridge.core.MVPActivity;
 import com.android.library.bridge.core.base.IPresenter;
-import com.android.library.bridge.key.MasterKey;
 import com.android.library.bridge.util.ImageLoaderUtils;
 import com.android.library.bridge.util.SpUtils;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.net.entity.template.ScoreParameterEntity;
-import com.demo.template.entity.ScoreZipV2Entity;
 import com.android.library.widget.custom.CustomViewPager;
 import com.android.library.widget.detector.KeyboardStatusDetector;
 import com.demo.template.R;
 import com.demo.template.annotation.BundleKey;
 import com.demo.template.annotation.ReadUIMode;
+import com.demo.template.entity.ScoreMultiEntity;
+import com.demo.template.entity.ScoreZipV2Entity;
 import com.demo.template.listener.action.DefaultLayoutAction;
 import com.demo.template.listener.read.IChangeViewStateListener;
 import com.demo.template.listener.read.OnScoreInitOwnListener;
-import com.demo.template.entity.ScoreMultiEntity;
 import com.demo.template.ui.adapter.ScoreMenuAdapterListener;
 import com.demo.template.widget.ScoreHeaderLayout;
 import com.demo.template.widget.ScoreKeyboardLayout;
@@ -120,7 +119,7 @@ public abstract class BaseInitScoreActivity<P extends IPresenter> extends MVPAct
         answerLandToolbar.setOnAnswerLandToolbarAction(defaultLayoutAction);
         scoreHeader.setOnScoreHeaderAction(defaultLayoutAction);
         // 当题型是 解答题 且 不是 问题卷的时候  设置横屏
-        if (getScoreType() == QuestionType.ANSWER && !isProblem()) {
+        if (getScoreType() == TopicType.ANSWER && !isProblem()) {
             setHasLand(true);
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         }
@@ -160,10 +159,10 @@ public abstract class BaseInitScoreActivity<P extends IPresenter> extends MVPAct
     /**
      * 根据试题改变侧边栏布局
      *
-     * @param type 试题type {@link QuestionType}
+     * @param type 试题type {@link TopicType}
      */
     @Override
-    public void onChangeDrawerMode(@QuestionType int type) {
+    public void onChangeDrawerMode(@TopicType int type) {
         menuAdapter.clearAll();
         menuAdapter.addAll(ScoreMultiEntity.getScoreDrawerMenu(type, isProblem(), isArbitration()));
     }
@@ -232,12 +231,12 @@ public abstract class BaseInitScoreActivity<P extends IPresenter> extends MVPAct
      */
     @Override
     public boolean isAutomaticSubmit() {
-        return SpUtils.getBoolean(MasterKey.AUTOMATIC_SUBMIT, false);
+        return SpUtils.getBoolean(BundleKey.AUTOMATIC_SUBMIT, false);
     }
 
     @Override
     public void setAutomaticSubmit(boolean automaticSubmit) {
-        SpUtils.setBoolean(MasterKey.AUTOMATIC_SUBMIT, automaticSubmit);
+        SpUtils.setBoolean(BundleKey.AUTOMATIC_SUBMIT, automaticSubmit);
     }
 
     @Override
@@ -255,13 +254,13 @@ public abstract class BaseInitScoreActivity<P extends IPresenter> extends MVPAct
         return parameter;
     }
 
-    @QuestionType
+    @TopicType
     @Override
     public int getScoreType() {
         if (UIUtils.checkNotNull(parameter)) {
             return parameter.getScoreType();
         }
-        return QuestionType.ANSWER;
+        return TopicType.ANSWER;
     }
 
     /**

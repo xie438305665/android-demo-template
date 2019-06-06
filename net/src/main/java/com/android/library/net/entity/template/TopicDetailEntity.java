@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author y
  */
-public class PaperTopicDetailEntity {
+public class TopicDetailEntity {
 
     private String answer;
     private String difficultyDegreeName;

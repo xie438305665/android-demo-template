@@ -6,9 +6,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
 import android.text.TextUtils;
 
+import com.android.library.bridge.BridgeConstant;
 import com.android.library.bridge.core.MVPActivity;
 import com.android.library.bridge.core.MVPresenterImpl;
-import com.android.library.bridge.key.MasterKey;
 import com.android.library.bridge.util.SpUtils;
 import com.android.library.bridge.util.UIUtils;
 import com.demo.template.R;
@@ -26,7 +26,7 @@ public class SplashActivity extends MVPActivity {
     @Override
     protected void initCreate(@Nullable Bundle savedInstanceState) {
         UIUtils.hideStatusBar(this);
-        Class cls = TextUtils.isEmpty(SpUtils.getString(MasterKey.TOKEN)) ? LoginActivity.class : MainActivity.class;
+        Class cls = TextUtils.isEmpty(SpUtils.getString(BridgeConstant.TOKEN)) ? LoginActivity.class : MainActivity.class;
         new Handler().postDelayed(() -> {
             UIUtils.startActivity(cls);
             finish();

@@ -15,7 +15,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.bridge.util.ViewUtils;
 import com.demo.template.R;
@@ -100,7 +100,7 @@ public class ScoreHeaderLayout extends ScoreLayout implements IChangeViewStateLi
     }
 
     @Override
-    public void onViewChangeState(@ReadUIMode int uiMode, @QuestionType int type, boolean problem, boolean mixing, boolean arbitrate) {
+    public void onViewChangeState(@ReadUIMode int uiMode, @TopicType int type, boolean problem, boolean mixing, boolean arbitrate) {
         boolean landscape = UIUtils.isLandscape(getContext());
         if (problem || !mixing) {
             ViewUtils.visibleView(name);
@@ -110,9 +110,9 @@ public class ScoreHeaderLayout extends ScoreLayout implements IChangeViewStateLi
         if (arbitrate) {
             ViewUtils.goneView(percentage);
         }
-        if (type == QuestionType.FILL) {
+        if (type == TopicType.FILL) {
             ViewUtils.visibleView(this);
-        } else if (type == QuestionType.ANSWER) {
+        } else if (type == TopicType.ANSWER) {
             if (landscape) {
                 ViewUtils.goneView(this);
             } else {
@@ -124,31 +124,31 @@ public class ScoreHeaderLayout extends ScoreLayout implements IChangeViewStateLi
         } else {
             onChangedDefaultUI(type, uiMode == ReadUIMode.REPLACE);
         }
-        if (arbitrate && type == QuestionType.FILL) {
+        if (arbitrate && type == TopicType.FILL) {
             ViewUtils.goneView(arbitrationName);
-        } else if (arbitrate && type == QuestionType.ANSWER) {
+        } else if (arbitrate && type == TopicType.ANSWER) {
             ViewUtils.visibleView(arbitrationName);
         }
     }
 
-    public void onChangedDefaultUI(@QuestionType int type, boolean attach) {
+    public void onChangedDefaultUI(@TopicType int type, boolean attach) {
         if (attach) {
             progressLayout.setProgressBar(0);
         }
-        if (type == QuestionType.ANSWER) {
+        if (type == TopicType.ANSWER) {
             ViewUtils.goneView(allTrue, allFalse);
             ViewUtils.visibleView(answerHeaderLine, name, answerHeaderTitle, maxTopicScore, editText);
-        } else if (type == QuestionType.FILL) {
+        } else if (type == TopicType.FILL) {
             ViewUtils.visibleView(allFalse, allTrue);
             ViewUtils.goneView(answerHeaderLine, name, answerHeaderTitle, maxTopicScore, editText);
         }
     }
 
-    public void onChangedProblemUI(@QuestionType int type) {
+    public void onChangedProblemUI(@TopicType int type) {
         ViewUtils.goneView(allFalse, allTrue);
-        if (type == QuestionType.ANSWER) {
+        if (type == TopicType.ANSWER) {
             ViewUtils.visibleView(answerHeaderLine, name, answerHeaderTitle, maxTopicScore, editText);
-        } else if (type == QuestionType.FILL) {
+        } else if (type == TopicType.FILL) {
             ViewUtils.goneView(answerHeaderLine, name, answerHeaderTitle, maxTopicScore, editText);
         }
     }

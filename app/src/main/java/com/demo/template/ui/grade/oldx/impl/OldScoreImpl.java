@@ -3,8 +3,8 @@ package com.demo.template.ui.grade.oldx.impl;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.android.library.bridge.annotation.QuestionType;
-import com.android.library.bridge.key.Booleans;
+import com.android.library.bridge.annotation.TopicType;
+import com.android.library.bridge.annotation.Booleans;
 import com.demo.template.ui.grade.oldx.view.OldScoreView;
 
 /**
@@ -19,7 +19,7 @@ public class OldScoreImpl extends OldScorePresenterImpl {
     }
 
     @Override
-    public void onScoreRequest(@NonNull String examGroupId, @NonNull String markingGroupId, @Nullable String classId, @QuestionType int type, boolean first, @Booleans int hasPreLoading) {
+    public void onScoreRequest(@NonNull String examGroupId, @NonNull String markingGroupId, @Nullable String classId, @TopicType int type, boolean first, @Booleans int hasPreLoading) {
 //        Observable<ScoreZipEntity> zip;
 //        Observable<BaseEntity<List<ScoreEntity>>> studentFirst = NetRequest.single().getService().markingStudentFirst(examGroupId, markingGroupId, classId, 0, getPageSize(type, ScoreKeyboardFactory.getTopicCountV1(markingGroupId))).map(new NetFunc<>());
 //        Observable<BaseEntity<GroupQuotaEntity>> groupQuota = NetRequest.single().getService().groupQuota(examGroupId, markingGroupId, classId).map(new NetFunc<>());
@@ -32,7 +32,7 @@ public class OldScoreImpl extends OldScorePresenterImpl {
     }
 
     @Override
-    public void onScoreNextRequest(@NonNull String examGroupId, @NonNull String markingGroupId, @Nullable String classId, @NonNull String studentId, @QuestionType int type, @Booleans int hasPreLoading) {
+    public void onScoreNextRequest(@NonNull String examGroupId, @NonNull String markingGroupId, @Nullable String classId, @NonNull String studentId, @TopicType int type, @Booleans int hasPreLoading) {
 //        Observable<ScoreZipEntity> observable = NetRequest.single().getService().markingStudentNext(examGroupId, markingGroupId, classId, studentId, getPageSize(type, ScoreKeyboardFactory.getTopicCountV1(markingGroupId)))
 //                .map(new OldPageStateFun<>(GradeScoreType.NEXT))
 //                .observeOn(AndroidSchedulers.mainThread())
@@ -41,7 +41,7 @@ public class OldScoreImpl extends OldScorePresenterImpl {
     }
 
     @Override
-    public void onScorePrevRequest(@NonNull String examGroupId, @NonNull String markingGroupId, @Nullable String classId, @NonNull String studentId, @QuestionType int type, @Booleans int hasPreLoading) {
+    public void onScorePrevRequest(@NonNull String examGroupId, @NonNull String markingGroupId, @Nullable String classId, @NonNull String studentId, @TopicType int type, @Booleans int hasPreLoading) {
 //        Observable<ScoreZipEntity> observable = NetRequest.single().getService().markingStudentPrev(examGroupId, markingGroupId, classId, studentId, getPageSize(type, ScoreKeyboardFactory.getTopicCountV1(markingGroupId)))
 //                .map(new OldPageStateFun<>(GradeScoreType.PREV))
 //                .observeOn(AndroidSchedulers.mainThread())
@@ -50,7 +50,7 @@ public class OldScoreImpl extends OldScorePresenterImpl {
     }
 
     @Override
-    public void onScoreUnRequest(@NonNull String examGroupId, @NonNull String markingGroupId, @Nullable String classId, @QuestionType int type, @Booleans int hasPreLoading) {
+    public void onScoreUnRequest(@NonNull String examGroupId, @NonNull String markingGroupId, @Nullable String classId, @TopicType int type, @Booleans int hasPreLoading) {
 //        Observable<ScoreZipEntity> observable = NetRequest.single().getService().markingStudentUn(examGroupId, markingGroupId, classId, getPageSize(type, ScoreKeyboardFactory.getTopicCountV1(markingGroupId)))
 //                .map(listBaseEntity -> ScoreZipEntity.createUn(listBaseEntity.getData()))
 //                .observeOn(AndroidSchedulers.mainThread())
@@ -59,7 +59,7 @@ public class OldScoreImpl extends OldScorePresenterImpl {
     }
 
     @Override
-    public void onScoreUnNextRequest(@NonNull String examGroupId, @NonNull String markingGroupId, @Nullable String classId, @QuestionType int type, @Booleans int hasPreLoading) {
+    public void onScoreUnNextRequest(@NonNull String examGroupId, @NonNull String markingGroupId, @Nullable String classId, @TopicType int type, @Booleans int hasPreLoading) {
 //        Observable<ScoreZipEntity> observable = NetRequest.single().getService().markingStudentUnNext(examGroupId, markingGroupId, classId, getPageSize(type, ScoreKeyboardFactory.getTopicCountV1(markingGroupId)))
 //                .map(new OldPageStateFun<>(GradeScoreType.UN_NEXT))
 //                .observeOn(AndroidSchedulers.mainThread())
@@ -68,7 +68,7 @@ public class OldScoreImpl extends OldScorePresenterImpl {
     }
 
     @Override
-    public void onScoreProblemRequest(@NonNull String examGroupId, @NonNull String markingGroupId, @NonNull String studentId, @QuestionType int type, boolean first, @Booleans int hasPreLoading) {
+    public void onScoreProblemRequest(@NonNull String examGroupId, @NonNull String markingGroupId, @NonNull String studentId, @TopicType int type, boolean first, @Booleans int hasPreLoading) {
 //        Observable<BaseEntity<TopicAnswerEntity>> topicAnswer = NetRequest.single().getService().topicAnswer(examGroupId, markingGroupId).map(new NetFunc<>());
 //        Observable<BaseEntity<GroupQuotaEntity>> groupQuota = NetRequest.single().getService().groupQuota(examGroupId, markingGroupId, "0").map(new NetFunc<>());
 //        Observable<BaseEntity<ScoreEntity>> problem = NetRequest.single().getService().problem(examGroupId, markingGroupId, studentId).map(new NetFunc<>());
@@ -79,14 +79,14 @@ public class OldScoreImpl extends OldScorePresenterImpl {
     }
 
     @Override
-    public void onScoreProblemNextRequest(@NonNull String examGroupId, @NonNull String markingGroupId, @NonNull String studentId, @QuestionType int type, @Booleans int hasPreLoading) {
+    public void onScoreProblemNextRequest(@NonNull String examGroupId, @NonNull String markingGroupId, @NonNull String studentId, @TopicType int type, @Booleans int hasPreLoading) {
 //        Observable<ScoreZipEntity> flatMap = NetRequest.single().getService().problemNext(examGroupId, markingGroupId, studentId)
 //                .map(data -> ScoreZipEntity.createProblemNext(data.getData()).setPageSate(UIUtils.checkNull(data.getData().getStudentPaperTopic()) ? ScorePageState.NO_NEXT : ScorePageState.ANOTHER_NEXT));
 //        NetRequest.single().getApi(hasPreLoading + GradeUrl.MARKING_STUDENT_PROBLEM_NEXT, flatMap, new OldScoreNetCallbackImpl(getView(), GradeScoreType.PROBLEM_NEXT, hasPreLoading));
     }
 
     @Override
-    public void onScoreProblemPrevRequest(@NonNull String examGroupId, @NonNull String markingGroupId, @NonNull String studentId, @QuestionType int type, @Booleans int hasPreLoading) {
+    public void onScoreProblemPrevRequest(@NonNull String examGroupId, @NonNull String markingGroupId, @NonNull String studentId, @TopicType int type, @Booleans int hasPreLoading) {
 //        Observable<ScoreZipEntity> flatMap = NetRequest.single().getService().problemPrev(examGroupId, markingGroupId, studentId)
 //                .map(data -> ScoreZipEntity.createProblemPrev(data.getData()).setPageSate(UIUtils.checkNull(data.getData().getStudentPaperTopic()) ? ScorePageState.NO_PREV : ScorePageState.ANOTHER_PREV));
 //        NetRequest.single().getApi(hasPreLoading + GradeUrl.MARKING_STUDENT_PROBLEM_PREV, flatMap, new OldScoreNetCallbackImpl(getView(), GradeScoreType.PROBLEM_PREV, hasPreLoading));

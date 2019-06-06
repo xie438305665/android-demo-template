@@ -7,7 +7,7 @@ import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.bridge.util.ValueAnimatorUtils;
 import com.demo.template.R;
@@ -91,19 +91,19 @@ public class ScoreKeyboardLayout extends ScoreLayout implements IChangeViewState
     }
 
     @Override
-    public void onViewChangeState(@ReadUIMode int uiMode, @QuestionType int type, boolean problem, boolean mixing, boolean arbitrate) {
+    public void onViewChangeState(@ReadUIMode int uiMode, @TopicType int type, boolean problem, boolean mixing, boolean arbitrate) {
         if (uiMode == ReadUIMode.INIT && problem || uiMode == ReadUIMode.INIT && arbitrate) {
             fillKeyboardLayout.goneUnknown();
         }
         onChangedUI(type, uiMode == ReadUIMode.REPLACE);
     }
 
-    private void onChangedUI(@QuestionType int type, boolean attach) {
+    private void onChangedUI(@TopicType int type, boolean attach) {
         boolean landscape = UIUtils.isLandscape(getContext());
-        if (type == QuestionType.ANSWER && answerKeyboardLayout.getHeight() > ValueAnimatorUtils.DEFAULT_MIN_VALUE && !landscape) {
+        if (type == TopicType.ANSWER && answerKeyboardLayout.getHeight() > ValueAnimatorUtils.DEFAULT_MIN_VALUE && !landscape) {
             return;
         }
-        if (type == QuestionType.FILL && fillKeyboardLayout.getHeight() > ValueAnimatorUtils.DEFAULT_MIN_VALUE) {
+        if (type == TopicType.FILL && fillKeyboardLayout.getHeight() > ValueAnimatorUtils.DEFAULT_MIN_VALUE) {
             return;
         }
         if (attach) {
@@ -111,7 +111,7 @@ public class ScoreKeyboardLayout extends ScoreLayout implements IChangeViewState
             return;
         }
         switch (type) {
-            case QuestionType.ANSWER:
+            case TopicType.ANSWER:
                 ViewGroup.LayoutParams fillLayoutParams = fillKeyboardLayout.getLayoutParams();
                 fillLayoutParams.height = 0;
                 fillKeyboardLayout.setLayoutParams(fillLayoutParams);
@@ -119,53 +119,53 @@ public class ScoreKeyboardLayout extends ScoreLayout implements IChangeViewState
                 layoutParams.height = landscape ? 0 : (int) UIUtils.getDimension(R.dimen.dp_100);
                 answerKeyboardLayout.setLayoutParams(layoutParams);
                 break;
-            case QuestionType.FILL:
+            case TopicType.FILL:
                 ViewGroup.LayoutParams answerLayoutParams = answerKeyboardLayout.getLayoutParams();
                 answerLayoutParams.height = 0;
                 answerKeyboardLayout.setLayoutParams(answerLayoutParams);
                 break;
-            case QuestionType.MULTIPLE_CHOICE:
+            case TopicType.MULTIPLE_CHOICE:
                 break;
-            case QuestionType.ELECTIVE_QUESTION:
+            case TopicType.ELECTIVE_QUESTION:
                 break;
-            case QuestionType.ENGLISH:
+            case TopicType.ENGLISH:
                 break;
         }
     }
 
     @Deprecated
-    public void updateKeyboard(@QuestionType int type, @NonNull String markingGroupId, boolean problem) {
-        if (type == QuestionType.ANSWER) {
+    public void updateKeyboard(@TopicType int type, @NonNull String markingGroupId, boolean problem) {
+        if (type == TopicType.ANSWER) {
             answerKeyboardLayout.updateKeyboard(markingGroupId, problem);
-        } else if (type == QuestionType.FILL) {
+        } else if (type == TopicType.FILL) {
             fillKeyboardLayout.updateKeyboard(markingGroupId);
         }
     }
 
-    public void updateV2Keyboard(@QuestionType int type, @NonNull String topicId, boolean problem) {
-        if (type == QuestionType.ANSWER) {
+    public void updateV2Keyboard(@TopicType int type, @NonNull String topicId, boolean problem) {
+        if (type == TopicType.ANSWER) {
             answerKeyboardLayout.updateV2Keyboard(topicId, problem);
-        } else if (type == QuestionType.FILL) {
+        } else if (type == TopicType.FILL) {
             fillKeyboardLayout.updateV2Keyboard(topicId);
         }
     }
 
-    private void changedAttachUI(@QuestionType int type, boolean landscape) {
+    private void changedAttachUI(@TopicType int type, boolean landscape) {
         switch (type) {
-            case QuestionType.ANSWER:
+            case TopicType.ANSWER:
                 if (landscape) {
                     return;
                 }
                 fillValueAnimator.setIntValue(fillKeyboardLayout.getHeight(), 0).start();
                 break;
-            case QuestionType.FILL:
+            case TopicType.FILL:
                 answerValueAnimator.setIntValue(answerKeyboardLayout.getHeight(), 0).start();
                 break;
-            case QuestionType.ELECTIVE_QUESTION:
+            case TopicType.ELECTIVE_QUESTION:
                 break;
-            case QuestionType.ENGLISH:
+            case TopicType.ENGLISH:
                 break;
-            case QuestionType.MULTIPLE_CHOICE:
+            case TopicType.MULTIPLE_CHOICE:
                 break;
         }
     }

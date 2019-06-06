@@ -1,7 +1,6 @@
 package com.android.library.bridge;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.android.library.bridge.key.MasterKey;
 import com.android.library.bridge.util.AESUtils;
 import com.android.library.bridge.util.ActivityUtils;
 import com.android.library.bridge.util.GsonUtils;
@@ -19,7 +18,7 @@ public class User {
 
     public static UserEntity getUserInfo() {
         try {
-            UserEntity userEntity = GsonUtils.jsonToObj(AESUtils.des(SpUtils.getString(MasterKey.USER), MasterKey.MASTER_ID, Cipher.DECRYPT_MODE), UserEntity.class);
+            UserEntity userEntity = GsonUtils.jsonToObj(AESUtils.des(SpUtils.getString(BridgeConstant.USER), BridgeConstant.MASTER_ID, Cipher.DECRYPT_MODE), UserEntity.class);
             if (userEntity == null) {
                 quit();
             } else {
@@ -44,5 +43,4 @@ public class User {
         NetRequest.single().cancelAll();
         ARouter.getInstance().build(RoutePath.MAIN).navigation();
     }
-
 }

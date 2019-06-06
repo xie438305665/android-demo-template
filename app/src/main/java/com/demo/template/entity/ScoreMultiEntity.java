@@ -3,7 +3,7 @@ package com.demo.template.entity;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.demo.template.R;
 import com.demo.template.annotation.DrawerItemViewType;
 import com.demo.template.annotation.DrawerPosition;
@@ -51,20 +51,20 @@ public class ScoreMultiEntity implements MultiCallBack, Parcelable {
     }
 
     /**
-     * @param type        {@link QuestionType#ANSWER} {@link QuestionType#FILL}
+     * @param type        {@link TopicType#ANSWER} {@link TopicType#FILL}
      * @param arbitration 是否仲裁
      * @param problem     是否问题卷
      * @return {@link List<ScoreMultiEntity>}
      */
-    public static List<ScoreMultiEntity> getScoreDrawerMenu(@QuestionType int type, boolean problem, boolean arbitration) {
+    public static List<ScoreMultiEntity> getScoreDrawerMenu(@TopicType int type, boolean problem, boolean arbitration) {
         List<ScoreMultiEntity> menuList = new ArrayList<>();
         menuList.add(new ScoreMultiEntity(R.drawable.ic_arrow_forward_light, "设置", DrawerItemViewType.HEADER, DrawerPosition.SETTING));
         menuList.add(new ScoreMultiEntity(R.drawable.grade_ic_score_detail, "试题详情", DrawerItemViewType.ITEM, DrawerPosition.QUESTIONS_DETAIL));
-        if (type == QuestionType.FILL && !problem) {
+        if (type == TopicType.FILL && !problem) {
             menuList.add(new ScoreMultiEntity(R.drawable.grade_ic_score_num, "每屏显示数量", DrawerItemViewType.ITEM, DrawerPosition.FILL_NUM));
         }
         menuList.add(new ScoreMultiEntity(R.drawable.grade_ic_score_keybaord_setting, "打分键盘设置", DrawerItemViewType.ITEM, DrawerPosition.KEYBOARD));
-        if (type == QuestionType.ANSWER && !problem) {
+        if (type == TopicType.ANSWER && !problem) {
             menuList.add(new ScoreMultiEntity(R.drawable.ic_land, "横屏", DrawerItemViewType.ITEM, DrawerPosition.LAND));
         }
         if (!problem && !arbitration) {

@@ -49,4 +49,8 @@ public @interface BundleKey {
      * 是否刷新
      */
     String GRADE_SCORE_REFRESH = "score:refresh";
+    /**
+     * 阅卷时是否打开自动提交
+     */
+    String AUTOMATIC_SUBMIT = "automaticSubmit";
 }

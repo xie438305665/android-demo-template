@@ -12,7 +12,7 @@ import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.android.library.bridge.RoutePath;
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.bridge.util.NumberUtils;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.net.entity.template.PairsMyProgressEntity;
@@ -67,7 +67,7 @@ public class ScoreActivity extends ScoreNetActivity implements OnScoreOwnListene
         getParameter().setScoreType(entity.getScoreType());
         resetData();
         boolean landscape = false;
-        if (getParameter().getScoreType() == QuestionType.FILL && UIUtils.isLandscape(this)) {
+        if (getParameter().getScoreType() == TopicType.FILL && UIUtils.isLandscape(this)) {
             landscape = true;
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
         }
@@ -86,7 +86,7 @@ public class ScoreActivity extends ScoreNetActivity implements OnScoreOwnListene
     @Override
     public void onChangedFragment(boolean hasNext) {
         int scoreType = getScoreType();
-        if (scoreType == QuestionType.FILL) {
+        if (scoreType == TopicType.FILL) {
             setHasLand(false);
         }
         onClearAnswerEditTextFocus();
@@ -122,7 +122,7 @@ public class ScoreActivity extends ScoreNetActivity implements OnScoreOwnListene
         }
         PairsMyProgressEntity currentProgressItem = getCurrentProgressItem();
         scoreHeader.updateV2PercentageAndSchedule(currentProgressItem);
-        if (getScoreType() == QuestionType.ANSWER) {
+        if (getScoreType() == TopicType.ANSWER) {
             answerLandToolbar.updateV2PercentageAndSchedule(currentProgressItem);
         }
         if (isArbitration()) {
@@ -174,7 +174,7 @@ public class ScoreActivity extends ScoreNetActivity implements OnScoreOwnListene
                 return;
             }
             toolbar.setTitle(String.format(UIUtils.getString(R.string.grade_score_title), getAnswerEntity().getTopicNo()));
-            if (getScoreType() == QuestionType.ANSWER) {
+            if (getScoreType() == TopicType.ANSWER) {
                 answerLandToolbar.setTitle(getAnswerEntity().getTopicNo());
             }
             return;
@@ -183,7 +183,7 @@ public class ScoreActivity extends ScoreNetActivity implements OnScoreOwnListene
             return;
         }
         toolbar.setTitle(String.format(UIUtils.getString(R.string.grade_score_title), getCurrentProgressItem().getTopicNoText()));
-        if (getScoreType() == QuestionType.ANSWER) {
+        if (getScoreType() == TopicType.ANSWER) {
             answerLandToolbar.setTitle(getCurrentProgressItem().getTopicNoText());
         }
     }
@@ -195,7 +195,7 @@ public class ScoreActivity extends ScoreNetActivity implements OnScoreOwnListene
             return;
         }
         keyboard.updateV2Keyboard(getScoreType(), topicId, isProblem());
-        if (getScoreType() == QuestionType.ANSWER) {
+        if (getScoreType() == TopicType.ANSWER) {
             answerLandKeyboard.updateV2Keyboard(topicId);
         }
     }
@@ -236,9 +236,9 @@ public class ScoreActivity extends ScoreNetActivity implements OnScoreOwnListene
         if (UIUtils.checkNull(getScoreAdapter())) {
             return;
         }
-        if (getScoreType() == QuestionType.FILL) {
+        if (getScoreType() == TopicType.FILL) {
             getScoreAdapter().onFillScoreDrawerItemClick(position);
-        } else if (getScoreType() == QuestionType.ANSWER) {
+        } else if (getScoreType() == TopicType.ANSWER) {
             getScoreAdapter().onAnswerScoreDrawerItemClick(position);
         }
     }

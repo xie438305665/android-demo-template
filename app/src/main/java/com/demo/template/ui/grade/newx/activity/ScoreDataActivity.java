@@ -16,7 +16,7 @@ import com.android.library.net.entity.template.TopicAnswerEntity;
 import com.demo.template.annotation.BundleKey;
 import com.demo.template.annotation.ScorePageState;
 import com.demo.template.listener.read.OnScoreDataOwnListener;
-import com.demo.template.ui.activity.PaperTopicDetailActivity;
+import com.demo.template.ui.activity.TopicDetailActivity;
 import com.demo.template.ui.activity.ScoreKeyboardActivity;
 import com.google.gson.reflect.TypeToken;
 
@@ -98,7 +98,7 @@ public abstract class ScoreDataActivity extends ScoreViewPagerActivity implement
         topicDetailBundle.putInt(BundleKey.SUBJECT_ID, UIUtils.checkNotNull(getParameter()) ? getParameter().getSubjectId() : 0);
         topicDetailBundle.putString(BundleKey.EXAM_GROUP_ID, getExamGroupId());
         topicDetailBundle.putString(BundleKey.TOPIC_INDEX, isProblem() ? getAnswerEntity().getTopicNo() : getCurrentProgressItem().getTopicNoText());
-        UIUtils.startActivity(PaperTopicDetailActivity.class, topicDetailBundle);
+        UIUtils.startActivity(TopicDetailActivity.class, topicDetailBundle);
     }
 
     @Override

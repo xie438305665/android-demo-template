@@ -2,8 +2,8 @@ package com.demo.template.ui.grade.newx.impl;
 
 import android.support.annotation.NonNull;
 
-import com.android.library.bridge.annotation.QuestionType;
-import com.android.library.bridge.key.Booleans;
+import com.android.library.bridge.annotation.TopicType;
+import com.android.library.bridge.annotation.Booleans;
 import com.android.library.net.body.read.TaskPageBody;
 import com.demo.template.factory.ScoreKeyboardFactory;
 import com.demo.template.ui.grade.newx.view.ScoreView;
@@ -19,7 +19,7 @@ public class ScoreImpl extends ScorePresenterImpl {
     }
 
     @Override
-    public void onScoreRequest(@NonNull String examGroupId, @NonNull String topicId, @QuestionType int type, int pageIndex, boolean first, @Booleans int hasPreLoading) {
+    public void onScoreRequest(@NonNull String examGroupId, @NonNull String topicId, @TopicType int type, int pageIndex, boolean first, @Booleans int hasPreLoading) {
         TaskPageBody taskPageBody = new TaskPageBody(examGroupId, first, pageIndex, ScoreKeyboardFactory.getTopicCountV2(topicId), topicId);
 //        Observable<ScoreZipV2Entity> zip;
 //        Observable<NewListEntity<ScoreTaskEntity>> taskPage = NetRequest.single().getService().taskPage(taskPageBody).map(new NetFunc<>());
@@ -32,7 +32,7 @@ public class ScoreImpl extends ScorePresenterImpl {
     }
 
     @Override
-    public void onScoreNextRequest(@NonNull String examGroupId, @NonNull String topicId, @QuestionType int type, int pageIndex, boolean first, @Booleans int hasPreLoading) {
+    public void onScoreNextRequest(@NonNull String examGroupId, @NonNull String topicId, @TopicType int type, int pageIndex, boolean first, @Booleans int hasPreLoading) {
 //        TaskPageBody taskPageBody = new TaskPageBody(examGroupId, first, pageIndex, ScoreKeyboardFactory.getTopicCountV2(topicId), topicId);
 //        Observable<ScoreZipV2Entity> observable = NetRequest.single().getService().taskPage(taskPageBody)
 //                .map(scoreTaskEntityNewListEntity -> ScoreZipV2Entity.createNext(scoreTaskEntityNewListEntity.getData()))
@@ -42,7 +42,7 @@ public class ScoreImpl extends ScorePresenterImpl {
     }
 
     @Override
-    public void onScorePrevRequest(@NonNull String examGroupId, @NonNull String topicId, @QuestionType int type, int pageIndex, boolean first, @Booleans int hasPreLoading) {
+    public void onScorePrevRequest(@NonNull String examGroupId, @NonNull String topicId, @TopicType int type, int pageIndex, boolean first, @Booleans int hasPreLoading) {
 //        TaskPageBody taskPageBody = new TaskPageBody(examGroupId, first, pageIndex, ScoreKeyboardFactory.getTopicCountV2(topicId), topicId);
 //        Observable<ScoreZipV2Entity> observable = NetRequest.single().getService().taskPage(taskPageBody)
 //                .map(scoreTaskEntityNewListEntity -> ScoreZipV2Entity.createPrev(scoreTaskEntityNewListEntity.getData()))
@@ -52,7 +52,7 @@ public class ScoreImpl extends ScorePresenterImpl {
     }
 
     @Override
-    public void onArbitrationScoreRequest(@NonNull String examGroupId, @NonNull String topicId, @QuestionType int type, int pageIndex, boolean first, @Booleans int hasPreLoading) {
+    public void onArbitrationScoreRequest(@NonNull String examGroupId, @NonNull String topicId, @TopicType int type, int pageIndex, boolean first, @Booleans int hasPreLoading) {
 //        TaskPageBody taskPageBody = new TaskPageBody(examGroupId, first, pageIndex, ScoreKeyboardFactory.getTopicCountV2(topicId), topicId);
 //        Observable<ScoreZipV2Entity> zip;
 //        Observable<NewListEntity<ScoreTaskEntity>> taskPage = NetRequest.single().getService().arbitrationTaskPage(taskPageBody).map(new NetFunc<>());
@@ -65,7 +65,7 @@ public class ScoreImpl extends ScorePresenterImpl {
     }
 
     @Override
-    public void onArbitrationScorePrevRequest(@NonNull String examGroupId, @NonNull String topicId, @QuestionType int type, int pageIndex, boolean first, @Booleans int hasPreLoading) {
+    public void onArbitrationScorePrevRequest(@NonNull String examGroupId, @NonNull String topicId, @TopicType int type, int pageIndex, boolean first, @Booleans int hasPreLoading) {
 //        TaskPageBody taskPageBody = new TaskPageBody(examGroupId, first, pageIndex, ScoreKeyboardFactory.getTopicCountV2(topicId), topicId);
 //        Observable<ScoreZipV2Entity> observable = NetRequest.single().getService().arbitrationTaskPage(taskPageBody)
 //                .map(scoreTaskEntityNewListEntity -> ScoreZipV2Entity.createArbitrationPrev(scoreTaskEntityNewListEntity.getData()))
@@ -75,7 +75,7 @@ public class ScoreImpl extends ScorePresenterImpl {
     }
 
     @Override
-    public void onArbitrationScoreNextRequest(@NonNull String examGroupId, @NonNull String topicId, @QuestionType int type, int pageIndex, boolean first, @Booleans int hasPreLoading) {
+    public void onArbitrationScoreNextRequest(@NonNull String examGroupId, @NonNull String topicId, @TopicType int type, int pageIndex, boolean first, @Booleans int hasPreLoading) {
 //        TaskPageBody taskPageBody = new TaskPageBody(examGroupId, first, pageIndex, ScoreKeyboardFactory.getTopicCountV2(topicId), topicId);
 //        Observable<ScoreZipV2Entity> observable = NetRequest.single().getService().arbitrationTaskPage(taskPageBody)
 //                .map(scoreTaskEntityNewListEntity -> ScoreZipV2Entity.createArbitrationNext(scoreTaskEntityNewListEntity.getData()))
@@ -85,7 +85,7 @@ public class ScoreImpl extends ScorePresenterImpl {
     }
 
     @Override
-    public void onScoreUnRequest(@NonNull String examGroupId, @NonNull String topicId, @QuestionType int type, @Booleans int hasPreLoading) {
+    public void onScoreUnRequest(@NonNull String examGroupId, @NonNull String topicId, @TopicType int type, @Booleans int hasPreLoading) {
 //        TaskPageBody taskPageBody = new TaskPageBody(examGroupId, ScoreKeyboardFactory.getTopicCountV2(topicId), topicId);
 //        Observable<ScoreZipV2Entity> observable = NetRequest.single().getService().unTaskPage(taskPageBody)
 //                .map(scoreTaskEntityNewListEntity -> ScoreZipV2Entity.createUn(scoreTaskEntityNewListEntity.getData()))
@@ -95,7 +95,7 @@ public class ScoreImpl extends ScorePresenterImpl {
     }
 
     @Override
-    public void onScoreUnNextRequest(@NonNull String examGroupId, @NonNull String topicId, @QuestionType int type, @Booleans int hasPreLoading) {
+    public void onScoreUnNextRequest(@NonNull String examGroupId, @NonNull String topicId, @TopicType int type, @Booleans int hasPreLoading) {
 //        TaskPageBody taskPageBody = new TaskPageBody(examGroupId, ScoreKeyboardFactory.getTopicCountV2(topicId), topicId);
 //        Observable<ScoreZipV2Entity> observable = NetRequest.single().getService().unTaskPage(taskPageBody)
 //                .map(scoreTaskEntityNewListEntity -> ScoreZipV2Entity.createUn(scoreTaskEntityNewListEntity.getData()))
@@ -105,7 +105,7 @@ public class ScoreImpl extends ScorePresenterImpl {
     }
 
     @Override
-    public void onScoreProblemRequest(@NonNull String examGroupId, @NonNull String topicId, @NonNull String studentId, @QuestionType int type, boolean first, @Booleans int hasPreLoading) {
+    public void onScoreProblemRequest(@NonNull String examGroupId, @NonNull String topicId, @NonNull String studentId, @TopicType int type, boolean first, @Booleans int hasPreLoading) {
 //        Observable<BaseEntity<TopicAnswerEntity>> topicAnswer = NetRequest.single().getService().v2TopicAnswer(topicId).map(new NetFunc<>());
 //        Observable<BaseEntity<ScoreTaskEntity>> problem = NetRequest.single().getService().problemTask(examGroupId, topicId, studentId).map(new NetFunc<>());
 //        Observable<ScoreZipV2Entity> zip = Observable.zip(problem, topicAnswer,
@@ -116,7 +116,7 @@ public class ScoreImpl extends ScorePresenterImpl {
     }
 
     @Override
-    public void onScoreProblemNextRequest(@NonNull String examGroupId, @NonNull String topicId, @NonNull String studentId, @QuestionType int type, boolean first, @Booleans int hasPreLoading) {
+    public void onScoreProblemNextRequest(@NonNull String examGroupId, @NonNull String topicId, @NonNull String studentId, @TopicType int type, boolean first, @Booleans int hasPreLoading) {
 //        Observable<ScoreZipV2Entity> flatMap = NetRequest.single().getService().problemNextTask(examGroupId, topicId, studentId)
 //                .map(new NetFunc<>())
 //                .map(taskEntity -> ScoreZipV2Entity.createProblemNext(taskEntity.getData()));
@@ -124,7 +124,7 @@ public class ScoreImpl extends ScorePresenterImpl {
     }
 
     @Override
-    public void onScoreProblemPrevRequest(@NonNull String examGroupId, @NonNull String topicId, @NonNull String studentId, @QuestionType int type, boolean first, @Booleans int hasPreLoading) {
+    public void onScoreProblemPrevRequest(@NonNull String examGroupId, @NonNull String topicId, @NonNull String studentId, @TopicType int type, boolean first, @Booleans int hasPreLoading) {
 //        Observable<ScoreZipV2Entity> flatMap = NetRequest.single().getService().problemPrevTask(examGroupId, topicId, studentId)
 //                .map(new NetFunc<>())
 //                .map(taskEntity -> ScoreZipV2Entity.createProblemPrev(taskEntity.getData()));

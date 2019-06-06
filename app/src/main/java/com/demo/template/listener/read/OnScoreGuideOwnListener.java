@@ -2,7 +2,7 @@ package com.demo.template.listener.read;
 
 import android.support.annotation.Nullable;
 
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.demo.template.widget.ScoreGuideView;
 
 /**
@@ -21,15 +21,15 @@ public interface OnScoreGuideOwnListener {
     /**
      * 显示引导页
      *
-     * @param scoreType 试题type {@link QuestionType}
+     * @param scoreType 试题type {@link TopicType}
      */
-    void showGuideView(@QuestionType int scoreType);
+    void showGuideView(@TopicType int scoreType);
 
     /**
      * 是否显示引导页
      *
-     * @param scoreType 试题type  {@link QuestionType}
+     * @param scoreType 试题type  {@link TopicType}
      * @return true 显示
      */
-    boolean hasShowGuideView(@QuestionType int scoreType);
+    boolean hasShowGuideView(@TopicType int scoreType);
 }

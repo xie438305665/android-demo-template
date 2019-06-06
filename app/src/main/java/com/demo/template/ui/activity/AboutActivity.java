@@ -5,9 +5,9 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatTextView;
 
+import com.android.library.bridge.BridgeConstant;
 import com.android.library.bridge.core.MVPActivity;
 import com.android.library.bridge.core.MVPresenterImpl;
-import com.android.library.bridge.key.MasterKey;
 import com.android.library.bridge.util.ImageLoaderUtils;
 import com.android.library.upgrade.Upgrade;
 import com.android.library.upgrade.VersionUploadEntity;
@@ -71,9 +71,9 @@ public class AboutActivity extends MVPActivity {
         upgrade
                 .setType(Upgrade.TYPE_CLICK)
                 .setIcon(R.drawable.ic_launcher)
-                .setApkName(MasterKey.UPGRADE_NAME)
-                .setSoftwareId(MasterKey.UPGRADE_ID)
-                .setPackageName(MasterKey.MASTER_ID)
+                .setApkName(BridgeConstant.UPGRADE_NAME)
+                .setSoftwareId(BridgeConstant.UPGRADE_ID)
+                .setPackageName(BridgeConstant.MASTER_ID)
                 .setUpgradeCallback(new UpgradeCallback() {
                     @Override
                     public void onUpgradeStart() {

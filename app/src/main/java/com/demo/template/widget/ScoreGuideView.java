@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.bridge.util.UIUtils;
 import com.demo.template.R;
 
@@ -16,13 +16,13 @@ import com.demo.template.R;
 @SuppressLint("ViewConstructor")
 public class ScoreGuideView extends FrameLayout {
 
-    @QuestionType
+    @TopicType
     private int scoreType;
     private int clickCount;
     private ScoreGuideCallback callback;
     private AppCompatImageView tips;
 
-    public ScoreGuideView(@NonNull Context context, @QuestionType int scoreType, ScoreGuideCallback scoreGuideCallback) {
+    public ScoreGuideView(@NonNull Context context, @TopicType int scoreType, ScoreGuideCallback scoreGuideCallback) {
         super(context);
         this.scoreType = scoreType;
         this.callback = scoreGuideCallback;
@@ -38,7 +38,7 @@ public class ScoreGuideView extends FrameLayout {
         ok.performClick();
     }
 
-    public void click(@QuestionType int scoreType) {
+    public void click(@TopicType int scoreType) {
         this.scoreType = scoreType;
         if (clickCount == 3) {
             setVisibility(GONE);
@@ -51,7 +51,7 @@ public class ScoreGuideView extends FrameLayout {
     }
 
     private void updateTipsImg() {
-        if (scoreType == QuestionType.FILL) {
+        if (scoreType == TopicType.FILL) {
             tips.setImageDrawable(clickCount == 0 ? getResources().getDrawable(R.drawable.grade_ic_score_guide_minor_setting) :
                     clickCount == 1 ? getResources().getDrawable(R.drawable.grade_ic_score_guide_keyboard_setting)
                             : getResources().getDrawable(R.drawable.grade_ic_score_guide_switch));

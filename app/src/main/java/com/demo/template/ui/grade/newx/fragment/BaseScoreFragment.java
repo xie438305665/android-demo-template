@@ -9,10 +9,10 @@ import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.bridge.annotation.VersionType;
 import com.android.library.bridge.core.MVPFragment;
-import com.android.library.bridge.key.Booleans;
+import com.android.library.bridge.annotation.Booleans;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.db.GreenDaoManager;
 import com.android.library.net.body.read.ArbitrationTaskSubmitBody;
@@ -250,7 +250,7 @@ public abstract class BaseScoreFragment extends MVPFragment<ScorePresenterImpl, 
             return;
         }
         UIUtils.show(R.string.grade_next_score_success);
-        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV2(nextProgressItem.getTopicType() == QuestionType.FILL ? QuestionType.FILL : QuestionType.ANSWER, nextProgressItem.getExamGroupId(), nextProgressItem.getTopicId(), null, VersionType.V2), true);
+        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV2(nextProgressItem.getTopicType() == TopicType.FILL ? TopicType.FILL : TopicType.ANSWER, nextProgressItem.getExamGroupId(), nextProgressItem.getTopicId(), null, VersionType.V2), true);
     }
 
 
@@ -264,7 +264,7 @@ public abstract class BaseScoreFragment extends MVPFragment<ScorePresenterImpl, 
             return;
         }
         UIUtils.show(R.string.grade_prev_score_success);
-        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV2(prevProgressItem.getTopicType() == QuestionType.FILL ? QuestionType.FILL : QuestionType.ANSWER, prevProgressItem.getExamGroupId(), prevProgressItem.getTopicId(), null, VersionType.V2), false);
+        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV2(prevProgressItem.getTopicType() == TopicType.FILL ? TopicType.FILL : TopicType.ANSWER, prevProgressItem.getExamGroupId(), prevProgressItem.getTopicId(), null, VersionType.V2), false);
     }
 
     @Override
@@ -277,7 +277,7 @@ public abstract class BaseScoreFragment extends MVPFragment<ScorePresenterImpl, 
             return;
         }
         UIUtils.show(R.string.grade_next_score_success);
-        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV2(nextProgressItem.getTopicType() == QuestionType.FILL ? QuestionType.FILL : QuestionType.ANSWER, nextProgressItem.getExamGroupId(), nextProgressItem.getTopicId(), null, VersionType.V2), true);
+        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV2(nextProgressItem.getTopicType() == TopicType.FILL ? TopicType.FILL : TopicType.ANSWER, nextProgressItem.getExamGroupId(), nextProgressItem.getTopicId(), null, VersionType.V2), true);
     }
 
     @Override
@@ -290,7 +290,7 @@ public abstract class BaseScoreFragment extends MVPFragment<ScorePresenterImpl, 
             return;
         }
         UIUtils.show(R.string.grade_prev_score_success);
-        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV2(prevProgressItem.getTopicType() == QuestionType.FILL ? QuestionType.FILL : QuestionType.ANSWER, prevProgressItem.getExamGroupId(), prevProgressItem.getTopicId(), null, VersionType.V2), false);
+        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV2(prevProgressItem.getTopicType() == TopicType.FILL ? TopicType.FILL : TopicType.ANSWER, prevProgressItem.getExamGroupId(), prevProgressItem.getTopicId(), null, VersionType.V2), false);
     }
 
     @Override
@@ -303,7 +303,7 @@ public abstract class BaseScoreFragment extends MVPFragment<ScorePresenterImpl, 
             return;
         }
         UIUtils.show(R.string.grade_next_score_success);
-        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV2(prevProgressItem.getTopicType() == QuestionType.FILL ? QuestionType.FILL : QuestionType.ANSWER, prevProgressItem.getExamGroupId(), prevProgressItem.getTopicId(), null, VersionType.V2), true);
+        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV2(prevProgressItem.getTopicType() == TopicType.FILL ? TopicType.FILL : TopicType.ANSWER, prevProgressItem.getExamGroupId(), prevProgressItem.getTopicId(), null, VersionType.V2), true);
     }
 
     @Override
@@ -312,7 +312,7 @@ public abstract class BaseScoreFragment extends MVPFragment<ScorePresenterImpl, 
             return;
         }
         UIUtils.show(R.string.grade_next_score_success);
-        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV2(entity.getTopicType() == QuestionType.FILL ? QuestionType.FILL : QuestionType.ANSWER, entity.getExamGroupId(), entity.getTopicId(), entity.getStudentId(), VersionType.V2), true);
+        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV2(entity.getTopicType() == TopicType.FILL ? TopicType.FILL : TopicType.ANSWER, entity.getExamGroupId(), entity.getTopicId(), entity.getStudentId(), VersionType.V2), true);
     }
 
     @Override
@@ -321,7 +321,7 @@ public abstract class BaseScoreFragment extends MVPFragment<ScorePresenterImpl, 
             return;
         }
         UIUtils.show(R.string.grade_prev_score_success);
-        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV2(entity.getTopicType() == QuestionType.FILL ? QuestionType.FILL : QuestionType.ANSWER, entity.getExamGroupId(), entity.getTopicId(), entity.getStudentId(), VersionType.V2), false);
+        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV2(entity.getTopicType() == TopicType.FILL ? TopicType.FILL : TopicType.ANSWER, entity.getExamGroupId(), entity.getTopicId(), entity.getStudentId(), VersionType.V2), false);
     }
 
     @NonNull
@@ -453,9 +453,9 @@ public abstract class BaseScoreFragment extends MVPFragment<ScorePresenterImpl, 
     /**
      * 获取试题类型
      *
-     * @return {@link QuestionType}
+     * @return {@link TopicType}
      */
-    @QuestionType
+    @TopicType
     public abstract int getScoreType();
 
     /**
@@ -465,7 +465,7 @@ public abstract class BaseScoreFragment extends MVPFragment<ScorePresenterImpl, 
         if (UIUtils.checkNull(getScoreActivity())) {
             return;
         }
-        if (getScoreType() == QuestionType.ANSWER) {
+        if (getScoreType() == TopicType.ANSWER) {
             getScoreActivity().onRefreshAnswerName();
             getScoreActivity().onRefreshAnswerMaxScore();
         }

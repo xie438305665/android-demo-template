@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.album.Album;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.android.library.bridge.BridgeConstant;
 import com.android.library.bridge.BuildConfig;
 import com.android.library.bridge.User;
 import com.android.library.bridge.interceptor.HeaderInterceptor;
@@ -17,7 +18,6 @@ import com.android.library.db.GreenDaoManager;
 import com.android.library.net.NetUrl;
 import com.hjq.toast.ToastUtils;
 import com.socks.library.KLog;
-import com.tencent.bugly.crashreport.CrashReport;
 
 import io.reactivex.network.RxNetWork;
 
@@ -30,8 +30,8 @@ public class BridgeApp extends Application implements ExceptionHandler.Callback 
     @Override
     public void onCreate() {
         super.onCreate();
-        CrashReport.initCrashReport(getApplicationContext(), "项目key", !BuildConfig.DEBUG);
-        SpUtils.init(getApplicationContext(), "DEMO");
+//        CrashReport.initCrashReport(getApplicationContext(), BridgeConstant.BUG_LY_KEY, !BuildConfig.DEBUG);
+        SpUtils.init(getApplicationContext(), BridgeConstant.SP_FILE_NAME);
         KLog.init(BuildConfig.LOG);
         GreenDaoManager.register(getApplicationContext());
         UIUtils.register(getApplicationContext());

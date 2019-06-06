@@ -4,12 +4,12 @@ package com.demo.template.mvp.presenter.impl;
 import android.support.annotation.NonNull;
 
 import com.android.library.bridge.core.MVPresenterImpl;
-import com.demo.template.mvp.presenter.PaperTopicDetailPresenter;
-import com.demo.template.mvp.view.PaperTopicDetailView;
+import com.demo.template.mvp.presenter.TopicDetailPresenter;
+import com.demo.template.mvp.view.TopicDetailView;
 
-public class PaperTopicDetailPresenterImpl extends MVPresenterImpl<PaperTopicDetailView> implements PaperTopicDetailPresenter {
+public class TopicDetailPresenterImpl extends MVPresenterImpl<TopicDetailView> implements TopicDetailPresenter {
 
-    public PaperTopicDetailPresenterImpl(PaperTopicDetailView view) {
+    public TopicDetailPresenterImpl(TopicDetailView view) {
         super(view);
     }
 

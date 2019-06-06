@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.TextView;
 
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.bridge.util.ViewUtils;
 import com.demo.template.R;
@@ -100,14 +100,14 @@ public class AnswerLandToolbarLayout extends ScoreLayout implements IChangeViewS
     }
 
     @Override
-    public void onViewChangeState(@ReadUIMode int uiMode, @QuestionType int type, boolean problem, boolean mixing, boolean arbitrate) {
+    public void onViewChangeState(@ReadUIMode int uiMode, @TopicType int type, boolean problem, boolean mixing, boolean arbitrate) {
         boolean landscape = UIUtils.isLandscape(getContext());
         switch (uiMode) {
             case ReadUIMode.INIT:
                 init(type, problem, mixing, arbitrate, landscape);
                 break;
             case ReadUIMode.REPLACE:
-                if (type == QuestionType.FILL || !landscape) {
+                if (type == TopicType.FILL || !landscape) {
                     ViewUtils.goneView(this);
                 } else {
                     ViewUtils.visibleView(this);
@@ -123,7 +123,7 @@ public class AnswerLandToolbarLayout extends ScoreLayout implements IChangeViewS
         }
     }
 
-    private void init(@QuestionType int type, boolean problem, boolean mixing, boolean arbitrate, boolean landscape) {
+    private void init(@TopicType int type, boolean problem, boolean mixing, boolean arbitrate, boolean landscape) {
         if (problem) {
             ViewUtils.goneView(issuesView, progressLayout, percentage);
         } else {
@@ -137,7 +137,7 @@ public class AnswerLandToolbarLayout extends ScoreLayout implements IChangeViewS
         } else {
             ViewUtils.goneView(name);
         }
-        if (type == QuestionType.ANSWER && landscape) {
+        if (type == TopicType.ANSWER && landscape) {
             ViewUtils.visibleView(this);
         } else {
             ViewUtils.goneView(this);

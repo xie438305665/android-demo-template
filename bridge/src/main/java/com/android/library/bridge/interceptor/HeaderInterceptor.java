@@ -2,7 +2,7 @@ package com.android.library.bridge.interceptor;
 
 import android.support.annotation.NonNull;
 
-import com.android.library.bridge.key.MasterKey;
+import com.android.library.bridge.BridgeConstant;
 import com.android.library.bridge.util.SpUtils;
 
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class HeaderInterceptor implements Interceptor {
         Request request = chain.request()
                 .newBuilder()
                 .addHeader("Content-Type", "application/json;charset=utf-8")
-                .addHeader("Authorization", SpUtils.getString(MasterKey.TOKEN))
+                .addHeader("Authorization", SpUtils.getString(BridgeConstant.TOKEN))
                 .build();
         return chain.proceed(request);
     }

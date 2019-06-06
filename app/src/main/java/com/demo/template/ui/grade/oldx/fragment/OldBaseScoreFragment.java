@@ -9,10 +9,10 @@ import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.bridge.annotation.VersionType;
 import com.android.library.bridge.core.MVPFragment;
-import com.android.library.bridge.key.Booleans;
+import com.android.library.bridge.annotation.Booleans;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.db.GreenDaoManager;
 import com.android.library.net.body.read.SubmitScoreBody;
@@ -205,7 +205,7 @@ public abstract class OldBaseScoreFragment extends MVPFragment<OldScorePresenter
             return;
         }
         UIUtils.show(R.string.grade_next_score_success);
-        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV1(getScoreActivity().getExamGroupId(), next.getMarkingGroupId(), getScoreActivity().getNextStudentId(), next.getTopicType() == QuestionType.FILL ? QuestionType.FILL : QuestionType.ANSWER, VersionType.V1), true);
+        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV1(getScoreActivity().getExamGroupId(), next.getMarkingGroupId(), getScoreActivity().getNextStudentId(), next.getTopicType() == TopicType.FILL ? TopicType.FILL : TopicType.ANSWER, VersionType.V1), true);
     }
 
     @Override
@@ -214,7 +214,7 @@ public abstract class OldBaseScoreFragment extends MVPFragment<OldScorePresenter
             return;
         }
         UIUtils.show(R.string.grade_prev_score_success);
-        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV1(getScoreActivity().getExamGroupId(), prev.getMarkingGroupId(), getScoreActivity().getPrevStudentId(), prev.getTopicType() == QuestionType.FILL ? QuestionType.FILL : QuestionType.ANSWER, VersionType.V1), false);
+        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV1(getScoreActivity().getExamGroupId(), prev.getMarkingGroupId(), getScoreActivity().getPrevStudentId(), prev.getTopicType() == TopicType.FILL ? TopicType.FILL : TopicType.ANSWER, VersionType.V1), false);
     }
 
     @Override
@@ -223,7 +223,7 @@ public abstract class OldBaseScoreFragment extends MVPFragment<OldScorePresenter
             return;
         }
         UIUtils.show(R.string.grade_next_score_success);
-        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV1(getScoreActivity().getExamGroupId(), next.getMarkingGroupId(), getScoreActivity().getNextStudentId(), next.getTopicType() == QuestionType.FILL ? QuestionType.FILL : QuestionType.ANSWER, VersionType.V1), true);
+        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV1(getScoreActivity().getExamGroupId(), next.getMarkingGroupId(), getScoreActivity().getNextStudentId(), next.getTopicType() == TopicType.FILL ? TopicType.FILL : TopicType.ANSWER, VersionType.V1), true);
     }
 
     @Override
@@ -232,7 +232,7 @@ public abstract class OldBaseScoreFragment extends MVPFragment<OldScorePresenter
             return;
         }
         UIUtils.show(R.string.grade_next_score_success);
-        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV1(entity.getExamGroupId(), entity.getMarkingGroupId(), entity.getStudentId(), entity.getStudentPaperTopic().getType() == QuestionType.FILL ? QuestionType.FILL : QuestionType.ANSWER, VersionType.V1), true);
+        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV1(entity.getExamGroupId(), entity.getMarkingGroupId(), entity.getStudentId(), entity.getStudentPaperTopic().getType() == TopicType.FILL ? TopicType.FILL : TopicType.ANSWER, VersionType.V1), true);
     }
 
     @Override
@@ -241,7 +241,7 @@ public abstract class OldBaseScoreFragment extends MVPFragment<OldScorePresenter
             return;
         }
         UIUtils.show(R.string.grade_prev_score_success);
-        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV1(entity.getExamGroupId(), entity.getMarkingGroupId(), entity.getStudentId(), entity.getStudentPaperTopic().getType() == QuestionType.FILL ? QuestionType.FILL : QuestionType.ANSWER, VersionType.V1), false);
+        getScoreActivity().replaceFragment(ScoreParameterEntity.newReplaceInstanceV1(entity.getExamGroupId(), entity.getMarkingGroupId(), entity.getStudentId(), entity.getStudentPaperTopic().getType() == TopicType.FILL ? TopicType.FILL : TopicType.ANSWER, VersionType.V1), false);
     }
 
     @NonNull
@@ -319,22 +319,22 @@ public abstract class OldBaseScoreFragment extends MVPFragment<OldScorePresenter
     /**
      * 获取试题类型
      *
-     * @return {@link QuestionType}
+     * @return {@link TopicType}
      */
-    @QuestionType
+    @TopicType
     public abstract int getScoreType();
 
     /**
      * 更新UI数据
      */
     public void onChangedParentUI() {
-        if (UIUtils.checkNotNull(getScoreActivity()) && getScoreType() == QuestionType.ANSWER) {
+        if (UIUtils.checkNotNull(getScoreActivity()) && getScoreType() == TopicType.ANSWER) {
             getScoreActivity().onRefreshAnswerName();
         }
         onRefreshKeyboard();
         getScoreActivity().onRefreshTitle();
         getScoreActivity().onRefreshPercentageAndSchedule();
-        if (getScoreType() == QuestionType.ANSWER) {
+        if (getScoreType() == TopicType.ANSWER) {
             getScoreActivity().onRefreshAnswerMaxScore();
         }
     }

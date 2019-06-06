@@ -7,7 +7,7 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.bridge.util.ViewUtils;
 import com.demo.template.R;
@@ -64,11 +64,11 @@ public class ScoreToolbarLayout extends ScoreLayout implements IChangeViewStateL
     }
 
     @Override
-    public void onViewChangeState(@ReadUIMode int uiMode, @QuestionType int type, boolean problem, boolean mixing, boolean arbitrate) {
+    public void onViewChangeState(@ReadUIMode int uiMode, @TopicType int type, boolean problem, boolean mixing, boolean arbitrate) {
         boolean landscape = UIUtils.isLandscape(getContext());
-        if (type == QuestionType.FILL) {
+        if (type == TopicType.FILL) {
             ViewUtils.visibleView(this);
-        } else if (type == QuestionType.ANSWER) {
+        } else if (type == TopicType.ANSWER) {
             if (landscape) {
                 ViewUtils.goneView(this);
             } else {

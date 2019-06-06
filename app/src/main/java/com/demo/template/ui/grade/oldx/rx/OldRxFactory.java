@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.support.annotation.MainThread;
 import android.support.annotation.NonNull;
 
-import com.android.library.bridge.annotation.QuestionType;
+import com.android.library.bridge.annotation.TopicType;
 import com.android.library.net.entity.BaseEntity;
 import com.android.library.net.entity.template.GroupQuotaEntity;
 import com.android.library.net.entity.template.ScoreEntity;
@@ -25,17 +25,17 @@ public class OldRxFactory {
 
     @MainThread
     @NonNull
-    public static Function<ScoreZipEntity, ObservableSource<ScoreZipEntity>> getFileFun(@NonNull Activity activity, @GradeScoreType int scoreNetType, @QuestionType int type) {
+    public static Function<ScoreZipEntity, ObservableSource<ScoreZipEntity>> getFileFun(@NonNull Activity activity, @GradeScoreType int scoreNetType, @TopicType int type) {
         switch (type) {
-            case QuestionType.ANSWER:
+            case TopicType.ANSWER:
                 return new OldAnswerFileFun(activity, scoreNetType);
-            case QuestionType.ELECTIVE_QUESTION:
+            case TopicType.ELECTIVE_QUESTION:
                 break;
-            case QuestionType.ENGLISH:
+            case TopicType.ENGLISH:
                 break;
-            case QuestionType.FILL:
+            case TopicType.FILL:
                 return new OldFillFileFun(activity, scoreNetType);
-            case QuestionType.MULTIPLE_CHOICE:
+            case TopicType.MULTIPLE_CHOICE:
                 break;
         }
         throw new NullPointerException();

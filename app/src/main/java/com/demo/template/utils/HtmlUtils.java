@@ -2,7 +2,7 @@ package com.demo.template.utils;
 
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.net.entity.template.PaperEnglishTopicDetailEntity;
-import com.android.library.net.entity.template.PaperTopicDetailEntity;
+import com.android.library.net.entity.template.TopicDetailEntity;
 import com.android.library.net.entity.template.ScoreTaskEntity;
 
 import java.util.List;
@@ -54,18 +54,18 @@ public class HtmlUtils {
                 + "</html>";
     }
 
-    public static String getPaperTopicDetailHtml(PaperTopicDetailEntity entity, String maxScore, String topicIndex) {
-        List<PaperTopicDetailEntity.OptionsBean> options = entity.getOptions();
+    public static String getPaperTopicDetailHtml(TopicDetailEntity entity, String maxScore, String topicIndex) {
+        List<TopicDetailEntity.OptionsBean> options = entity.getOptions();
         StringBuilder option = new StringBuilder();
         if (options != null) {
-            for (PaperTopicDetailEntity.OptionsBean optionsBean : options) {
+            for (TopicDetailEntity.OptionsBean optionsBean : options) {
                 option.append(optionsBean.getContent());
             }
         }
-        List<PaperTopicDetailEntity.MethodsBean> methods = entity.getMethods();
+        List<TopicDetailEntity.MethodsBean> methods = entity.getMethods();
         StringBuilder method = new StringBuilder();
         if (methods != null) {
-            for (PaperTopicDetailEntity.MethodsBean methodsBean : methods) {
+            for (TopicDetailEntity.MethodsBean methodsBean : methods) {
                 method.append("<span style='color:#B4B4B4;border:1px solid #ccc;border-radius:10px;display:inline-block;word-break:keep-all;margin:4px;padding:4px'>").append(methodsBean.getMethodName()).append("</span>");
             }
         }

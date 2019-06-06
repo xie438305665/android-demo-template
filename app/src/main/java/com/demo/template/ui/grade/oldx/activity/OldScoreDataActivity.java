@@ -12,7 +12,7 @@ import com.android.library.net.entity.template.ScoreEntity;
 import com.android.library.net.entity.template.TopicAnswerEntity;
 import com.demo.template.annotation.BundleKey;
 import com.demo.template.listener.read.OldOnScoreDataOwnListener;
-import com.demo.template.ui.activity.PaperTopicDetailActivity;
+import com.demo.template.ui.activity.TopicDetailActivity;
 import com.demo.template.ui.activity.ScoreKeyboardActivity;
 
 import java.util.List;
@@ -63,7 +63,7 @@ public abstract class OldScoreDataActivity extends OldScoreViewPagerActivity imp
         topicDetailBundle.putInt(BundleKey.SUBJECT_ID, getParameter().getSubjectId());
         topicDetailBundle.putString(BundleKey.EXAM_GROUP_ID, getExamGroupId());
         topicDetailBundle.putString(BundleKey.TOPIC_INDEX, getGQEntity().getIndex());
-        UIUtils.startActivity(PaperTopicDetailActivity.class, topicDetailBundle);
+        UIUtils.startActivity(TopicDetailActivity.class, topicDetailBundle);
     }
 
     @Override

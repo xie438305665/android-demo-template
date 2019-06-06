@@ -1,4 +1,4 @@
-package com.android.library.bridge.key;
+package com.android.library.bridge.annotation;
 
 import android.support.annotation.IntDef;
 

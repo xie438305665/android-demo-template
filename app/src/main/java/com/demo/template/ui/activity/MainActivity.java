@@ -7,17 +7,19 @@ import android.support.design.widget.BottomNavigationView;
 import android.view.KeyEvent;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.demo.template.R;
-import com.demo.template.mvp.presenter.impl.MainPresenterImpl;
-import com.demo.template.mvp.view.MainView;
-import com.demo.template.ui.adapter.MainAdapter;
+import com.android.library.bridge.BridgeConstant;
 import com.android.library.bridge.RoutePath;
 import com.android.library.bridge.core.MVPActivity;
 import com.android.library.bridge.util.ActivityUtils;
 import com.android.library.bridge.util.ImageLoaderUtils;
 import com.android.library.bridge.util.StatusBarUtil;
 import com.android.library.bridge.util.UIUtils;
+import com.android.library.upgrade.Upgrade;
 import com.android.library.widget.custom.CustomViewPager;
+import com.demo.template.R;
+import com.demo.template.mvp.presenter.impl.MainPresenterImpl;
+import com.demo.template.mvp.view.MainView;
+import com.demo.template.ui.adapter.MainAdapter;
 
 import butterknife.BindColor;
 import butterknife.BindView;
@@ -64,9 +66,9 @@ public class MainActivity extends MVPActivity<MainPresenterImpl, Object> impleme
 //                .getInstance(this)
 //                .setType(Upgrade.TYPE_FIRST)
 //                .setIcon(R.mipmap.ic_launcher)
-//                .setApkName(MasterKey.UPGRADE_NAME)
-//                .setSoftwareId(MasterKey.UPGRADE_ID)
-//                .setPackageName(MasterKey.MASTER_ID)
+//                .setApkName(BridgeConstant.UPGRADE_NAME)
+//                .setSoftwareId(BridgeConstant.UPGRADE_ID)
+//                .setPackageName(BridgeConstant.MASTER_ID)
 //                .start();
     }
 
