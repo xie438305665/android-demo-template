@@ -2,8 +2,8 @@ package com.android.library.net;
 
 import android.support.v4.util.ArrayMap;
 
-import com.android.library.net.entity.ListEntity;
 import com.android.library.net.entity.BaseEntity;
+import com.android.library.net.entity.ListEntity;
 
 import java.util.List;
 import java.util.Map;
@@ -27,7 +27,6 @@ public class NetRequest {
     private Service service;
 
     private NetRequest() {
-        service = RxNetWork.observable(Service.class);
     }
 
     private static final class NetRequestHolder {

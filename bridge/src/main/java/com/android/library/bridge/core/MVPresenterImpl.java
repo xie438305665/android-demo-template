@@ -18,6 +18,7 @@ public abstract class MVPresenterImpl<V extends IView> extends MVPLifecyclePrese
     @Override
     public void onDestroy(@NonNull LifecycleOwner owner) {
         super.onDestroy(owner);
+        if (NetRequest.single() == null) return;
         NetRequest.single().useless();
     }
 
