@@ -76,7 +76,7 @@ public class ListTemplateFragment extends MVPFragment<ListTemplatePresenterImpl,
 
     @Override
     public void onViewSuccess(List<Object> objects) {
-        mAdapter.addAllData(objects);
+        mAdapter.addAll(objects);
     }
 
     @Override

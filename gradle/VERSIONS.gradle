@@ -24,7 +24,7 @@ ext.apiVersion = [
         butterknifeVersion       : '9.0.0-rc3',
 
         albumVersion             : '0.0.4.2',
-        rvAdapterVersion         : '0.0.4',
+        rvAdapterVersion         : '0.0.7',
         editImageVersion         : 'beta01',
         rxNetWorkVersion         : '0.1.8',
         statusLayoutVersion      : 'beta',
