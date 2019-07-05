@@ -801,4 +801,6 @@
     <dimen name="sp.397">397sp</dimen>
     <dimen name="sp.398">398sp</dimen>
     <dimen name="sp.399">399sp</dimen>
+
+    <dimen name="list_space_16dp">16dp</dimen>
 </resources>

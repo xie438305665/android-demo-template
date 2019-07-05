@@ -1,7 +1,7 @@
 package com.android.library.bridge.core.listener;
 
 import com.status.layout.Status;
-import com.android.library.bridge.adapter.SimpleAdapter;
+import com.android.library.bridge.adapter.ListAdapter;
 import com.android.library.bridge.core.base.BaseNetListener;
 import com.android.library.bridge.core.base.IRootListView;
 import com.android.library.bridge.util.UIUtils;
@@ -28,7 +28,7 @@ public class SimpleRootListNetListener<T> extends BaseNetListener<List<T>> {
         if (rootView == null) {
             return;
         }
-        if (type == SimpleAdapter.TYPE_STATUS) {
+        if (type == ListAdapter.TYPE_STATUS) {
             rootView.onChangeRootUI(Status.LOADING);
         }
     }
@@ -39,7 +39,7 @@ public class SimpleRootListNetListener<T> extends BaseNetListener<List<T>> {
         if (rootView == null) {
             return;
         }
-        if (page == 1 && type == SimpleAdapter.TYPE_STATUS) {
+        if (page == 1 && type == ListAdapter.TYPE_STATUS) {
             rootView.onChangeRootUI(Status.ERROR);
         } else {
             rootView.onNetError(type);
@@ -71,7 +71,7 @@ public class SimpleRootListNetListener<T> extends BaseNetListener<List<T>> {
         } else {
             rootView.onViewSuccess(list);
             rootView.onPagePlus();
-            if (page == 1 && type == SimpleAdapter.TYPE_STATUS) {
+            if (page == 1 && type == ListAdapter.TYPE_STATUS) {
                 rootView.onChangeRootUI(Status.SUCCESS);
             } else {
                 rootView.onNetComplete(type);

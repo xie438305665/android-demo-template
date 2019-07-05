@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="grade_color_keyboard_background">#4F4F4F</color>
-    <color name="grade_color_keyboard_divider">#666666</color>
-    <color name="grade_color_header_line">#F8F8F8</color>
-    <string name="grade_answer_header_title">答题批阅</string>
+
 </resources>

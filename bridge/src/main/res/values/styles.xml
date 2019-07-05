@@ -25,11 +25,21 @@
         <item name="android:windowIsFloating">true</item>
         <item name="android:backgroundDimEnabled">true</item>
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowAnimationStyle">@style/BottomToTopAnim</item>
+        <item name="android:windowAnimationStyle">@style/ToTopAnim</item>
     </style>
 
-    <style name="BottomToTopAnim" parent="android:Animation">
+    <style name="ToTopAnim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/top_anim_enter</item>
+        <item name="android:windowExitAnimation">@anim/top_anim_exit</item>
+    </style>
+
+    <style name="ToBottomAnim" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/bottom_anim_enter</item>
         <item name="android:windowExitAnimation">@anim/bottom_anim_exit</item>
+    </style>
+
+    <style name="TabLayoutTextSize" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">@dimen/sp.14</item>
+        <item name="android:textColor">@color/colorText</item>
     </style>
 </resources>

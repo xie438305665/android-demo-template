@@ -34,7 +34,7 @@ public class User {
         SpUtils.clearAll();
         ActivityUtils.removeAllActivity();
         NetRequest.single().cancelAll();
-        GreenDaoManager.deleteKeyboard();
+        GreenDaoManager.deleteAll();
         ARouter.getInstance().build(RoutePath.LOGIN).navigation();
     }
 

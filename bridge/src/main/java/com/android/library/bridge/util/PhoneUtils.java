@@ -1,5 +1,7 @@
 package com.android.library.bridge.util;
 
+import android.text.TextUtils;
+
 /**
  * @Author xcl
  * @CreateDate 2019/3/15
@@ -32,5 +34,16 @@ public class PhoneUtils {
      */
     public static String getVersion() {
         return android.os.Build.VERSION.RELEASE;
+    }
+
+    /**
+     * 手机号校验
+     *
+     * @param mobiles
+     * @return boolean
+     */
+    public static boolean isMobileNumber(String mobiles) {
+        String telRegex = "^((13[0-9])|(15[^4])|(18[0-9])|(17[0-8])|(147,145))\\d{8}$";
+        return !TextUtils.isEmpty(mobiles) && mobiles.matches(telRegex);
     }
 }

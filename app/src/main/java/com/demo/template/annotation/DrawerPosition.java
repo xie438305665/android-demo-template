@@ -6,41 +6,21 @@ import android.support.annotation.IntDef;
  * @author xcl
  */
 @IntDef({
-        DrawerPosition.SETTING,
-        DrawerPosition.QUESTIONS_DETAIL,
-        DrawerPosition.FILL_NUM,
-        DrawerPosition.KEYBOARD,
-        DrawerPosition.LAND,
-        DrawerPosition.UN_SCORE,
-        DrawerPosition.AUTOMATIC_SUBMIT,
+        DrawerPosition.POSITION_HEAD,
+        DrawerPosition.POSITION_ITEM,
+        DrawerPosition.POSITION_FOOTER,
 })
 public @interface DrawerPosition {
     /**
      * 头部
      */
-    int SETTING = -1;
+    int POSITION_HEAD = -1;
     /**
      * 试题详情
      */
-    int QUESTIONS_DETAIL = 0;
+    int POSITION_ITEM = 0;
     /**
      * 每屏显示数量
      */
-    int FILL_NUM = 1;
-    /**
-     * 键盘设置
-     */
-    int KEYBOARD = 2;
-    /**
-     * 横屏
-     */
-    int LAND = 3;
-    /**
-     * 只显示未阅卷
-     */
-    int UN_SCORE = 4;
-    /**
-     * 自动提交
-     */
-    int AUTOMATIC_SUBMIT = 5;
+    int POSITION_FOOTER = 1;
 }
