@@ -15,7 +15,7 @@
         android:layout_gravity="center_vertical"
         android:layout_marginEnd="@dimen/dp.20" />
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_item_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

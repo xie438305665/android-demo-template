@@ -1,6 +1,6 @@
 package com.android.library.bridge.interceptor;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.android.library.bridge.BridgeConstant;
 import com.android.library.bridge.util.SpUtils;

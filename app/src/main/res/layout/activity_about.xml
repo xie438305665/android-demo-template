@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.AppCompatImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="@dimen/dp.180"
         android:layout_height="@dimen/dp.180"
         android:layout_above="@+id/about_saas"
         android:layout_centerHorizontal="true"
         android:src="@drawable/ic_launcher" />
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/about_saas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
         android:text="@string/app_name"
         android:textSize="@dimen/sp.30" />
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
         android:textSize="@dimen/sp.18"
         tools:text="V1.0" />
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_upgrade"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
@@ -40,7 +40,7 @@
         android:text="@string/upgrade"
         android:textColor="@color/colorText" />
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_remove_disk_cache"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"

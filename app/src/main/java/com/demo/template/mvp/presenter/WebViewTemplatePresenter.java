@@ -1,6 +1,6 @@
 package com.demo.template.mvp.presenter;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.android.library.bridge.core.base.IPresenter;
 

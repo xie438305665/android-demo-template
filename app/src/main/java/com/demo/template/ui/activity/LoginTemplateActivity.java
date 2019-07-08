@@ -1,23 +1,25 @@
 package com.demo.template.ui.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.widget.NestedScrollView;
-import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.AppCompatEditText;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.core.widget.NestedScrollView;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.android.library.bridge.R2;
 import com.android.library.bridge.RoutePath;
 import com.android.library.bridge.core.MVPActivity;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.widget.detector.KeyboardStatusDetector;
-import com.demo.template.BuildConfig;
 import com.demo.template.R;
 import com.demo.template.mvp.presenter.impl.LoginTemplatePresenterImpl;
 import com.demo.template.mvp.view.LoginTemplateView;
+import com.socks.library.KLog;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -40,6 +42,7 @@ public class LoginTemplateActivity extends MVPActivity<LoginTemplatePresenterImp
 
     @Override
     protected void initCreate(@Nullable Bundle savedInstanceState) {
+        KLog.d(mPw);
         mPw.setOnFocusChangeListener((v, hasFocus) -> {
             if (hasFocus) {
                 mRootView.smoothScrollBy(0, 800);
@@ -47,7 +50,7 @@ public class LoginTemplateActivity extends MVPActivity<LoginTemplatePresenterImp
         });
         keyboardStatusDetector = new KeyboardStatusDetector(this);
         mRootView.getViewTreeObserver().addOnGlobalLayoutListener(keyboardStatusDetector);
-        if (BuildConfig.DEBUG) {
+        if (UIUtils.isDebug()) {
             mUser.setText("");
             mPw.setText("");
         }

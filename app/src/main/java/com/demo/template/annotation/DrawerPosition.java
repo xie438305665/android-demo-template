@@ -1,6 +1,6 @@
 package com.demo.template.annotation;
 
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 
 /**
  * @author xcl

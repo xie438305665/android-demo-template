@@ -11,7 +11,7 @@
         android:layout_height="?actionBarSize"
         android:background="@color/widget_color_white">
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/left_iv"
             android:layout_width="@dimen/widget.dp.42"
             android:layout_height="?actionBarSize"
@@ -19,7 +19,7 @@
             android:layout_marginStart="@dimen/widget.dp.8"
             android:src="@drawable/ic_arrow_forward_light" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/center_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
             android:textSize="@dimen/widget.sp.18" />
 
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/right_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
             android:visibility="gone"
             tools:ignore="RelativeOverlap" />
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/right_iv"
             android:layout_width="@dimen/widget.dp.36"
             android:layout_height="@dimen/widget.dp.36"

@@ -1,10 +1,11 @@
 package com.demo.template.ui.activity;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebResourceError;
@@ -13,6 +14,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.android.library.bridge.R2;
 import com.android.library.bridge.core.MVPActivity;
 import com.android.library.bridge.util.HtmlUtils;
 import com.android.library.widget.custom.CustomWebView;
@@ -35,6 +37,7 @@ public class WebViewTemplateActivity extends MVPActivity<WebViewTemplatePresente
     private String topicId;
     private boolean isError = false;
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void initCreate(@Nullable Bundle savedInstanceState) {
         mCustomToolBar.setCenterTvText(R.string.app_name);

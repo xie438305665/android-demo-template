@@ -11,14 +11,15 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 
 import com.hjq.toast.ToastUtils;
 
@@ -188,9 +189,9 @@ public class UIUtils {
         return list == null || list.isEmpty();
     }
 
-    public static boolean isDebug(Context context) {
+    public static boolean isDebug() {
         try {
-            ApplicationInfo info = context.getApplicationInfo();
+            ApplicationInfo info = getContext().getApplicationInfo();
             return (info.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
         } catch (Exception e) {
             return false;

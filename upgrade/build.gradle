@@ -16,7 +16,7 @@ android {
 }
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    compileOnly "com.android.support:appcompat-v7:$apiVersion.supportVersion"
+    compileOnly 'androidx.appcompat:appcompat:1.0.0'
     compileOnly("com.ydevelop:rxNetWork:$apiVersion.rxNetWorkVersion") {
         exclude group: "com.android.support"
     }

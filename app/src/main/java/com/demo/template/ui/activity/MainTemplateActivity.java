@@ -1,9 +1,11 @@
 package com.demo.template.ui.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.bottomnavigation.LabelVisibilityMode;
-import android.support.design.widget.BottomNavigationView;
+import androidx.annotation.Nullable;
+
+import com.android.library.bridge.R2;
+import com.google.android.material.bottomnavigation.LabelVisibilityMode;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import android.view.KeyEvent;
 
 import com.alibaba.android.arouter.facade.annotation.Route;

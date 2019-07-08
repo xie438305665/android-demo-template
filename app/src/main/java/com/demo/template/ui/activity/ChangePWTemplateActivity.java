@@ -1,13 +1,14 @@
 package com.demo.template.ui.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.widget.NestedScrollView;
-import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.AppCompatEditText;
-import android.support.v7.widget.AppCompatTextView;
+import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatTextView;
 import android.view.View;
 
+import com.android.library.bridge.R2;
 import com.demo.template.R;
 import com.demo.template.mvp.presenter.impl.ChangePwTemplatePresenterImpl;
 import com.demo.template.mvp.view.ChangePwTemplateView;
@@ -37,11 +38,11 @@ public class ChangePWTemplateActivity extends MVPActivity<ChangePwTemplatePresen
     @BindView(R.id.pw_root_view)
     NestedScrollView mRootView;
 
-    @BindString(R.string.change_pw_verification_hint)
+    @BindString(R2.string.change_pw_verification_hint)
     String pwVerificationHint;
-    @BindString(R.string.change_pw_new_again_tips)
+    @BindString(R2.string.change_pw_new_again_tips)
     String pwNewAgainTips;
-    @BindString(R.string.change_pw_success)
+    @BindString(R2.string.change_pw_success)
     String changePwSuccess;
 
     private KeyboardStatusDetector keyboardStatusDetector;

@@ -21,5 +21,5 @@ dependencies {
     compileOnly("com.ydevelop:rxNetWork:$apiVersion.rxNetWorkVersion") {
         exclude group: "com.android.support"
     }
-    compileOnly "com.android.support:support-v4:$apiVersion.supportVersion"
+    compileOnly 'androidx.legacy:legacy-support-v4:1.0.0'
 }

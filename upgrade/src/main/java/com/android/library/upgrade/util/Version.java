@@ -1,6 +1,6 @@
 package com.android.library.upgrade.util;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 public class Version implements Comparable<Version> {
 

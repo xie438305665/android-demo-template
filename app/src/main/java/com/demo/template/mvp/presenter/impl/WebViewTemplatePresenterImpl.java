@@ -1,7 +1,7 @@
 package com.demo.template.mvp.presenter.impl;
 
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.android.library.bridge.core.MVPresenterImpl;
 import com.android.library.net.NetRequest;

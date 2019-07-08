@@ -1,6 +1,6 @@
 package com.android.library.bridge.annotation;
 
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 
 /**
  * @author xcl

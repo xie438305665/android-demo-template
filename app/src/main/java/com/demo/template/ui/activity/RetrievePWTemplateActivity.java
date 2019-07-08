@@ -1,13 +1,14 @@
 package com.demo.template.ui.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.widget.NestedScrollView;
-import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.AppCompatEditText;
-import android.support.v7.widget.AppCompatTextView;
+import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatTextView;
 import android.view.View;
 
+import com.android.library.bridge.R2;
 import com.android.library.bridge.core.MVPActivity;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.bridge.util.ViewUtils;

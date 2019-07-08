@@ -1,6 +1,6 @@
 package com.android.library.bridge.core.listener;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.socks.library.KLog;
 import com.status.layout.Status;

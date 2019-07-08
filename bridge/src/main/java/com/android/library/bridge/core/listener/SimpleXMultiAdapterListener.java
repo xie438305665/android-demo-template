@@ -1,6 +1,6 @@
 package com.android.library.bridge.core.listener;
 
-import android.support.v7.widget.GridLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.xadapter.adapter.multi.XMultiAdapterListener;
 

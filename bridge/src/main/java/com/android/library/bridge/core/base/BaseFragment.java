@@ -1,6 +1,6 @@
 package com.android.library.bridge.core.base;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 /**
  * @author xcl

@@ -1,8 +1,8 @@
 package com.android.library.bridge.core;
 
-import android.arch.lifecycle.Lifecycle;
-import android.arch.lifecycle.LifecycleOwner;
-import android.support.annotation.NonNull;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.annotation.NonNull;
 
 import com.android.library.bridge.core.base.IPresenter;
 import com.android.library.bridge.core.base.IView;

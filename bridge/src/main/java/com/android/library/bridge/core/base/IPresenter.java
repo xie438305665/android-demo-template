@@ -1,6 +1,6 @@
 package com.android.library.bridge.core.base;
 
-import android.arch.lifecycle.DefaultLifecycleObserver;
+import androidx.lifecycle.DefaultLifecycleObserver;
 
 /**
  * @author xcl

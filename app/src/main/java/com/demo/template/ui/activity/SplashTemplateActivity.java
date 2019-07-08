@@ -2,11 +2,12 @@ package com.demo.template.ui.activity;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatImageView;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
 import android.text.TextUtils;
 
 import com.android.library.bridge.BridgeConstant;
+import com.android.library.bridge.R2;
 import com.android.library.bridge.core.MVPActivity;
 import com.android.library.bridge.core.MVPresenterImpl;
 import com.android.library.bridge.util.SpUtils;

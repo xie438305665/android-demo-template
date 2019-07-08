@@ -2,7 +2,7 @@ package com.android.library.bridge.util;
 
 import android.content.Context;
 import android.os.Looper;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;

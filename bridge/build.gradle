@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply from: '../gradle/VERSIONS.gradle'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion localVersion.compileSdkVersion
@@ -30,17 +31,18 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api "android.arch.lifecycle:common-java8:$apiVersion.lifecycleJava8Version"
-    api "com.android.support:appcompat-v7:$apiVersion.supportVersion"
-    api "com.android.support:design:$apiVersion.supportVersion"
-    api "com.android.support:cardview-v7:$apiVersion.supportVersion"
-    api "com.android.support.constraint:constraint-layout:$apiVersion.constraintVersion"
+    api 'androidx.lifecycle:lifecycle-common-java8:2.0.0'
+    api 'androidx.appcompat:appcompat:1.0.2'
+    api 'com.google.android.material:material:1.0.0'
+    api 'androidx.cardview:cardview:1.0.0'
+    api 'androidx.constraintlayout:constraintlayout:1.1.3'
+    api "com.jakewharton:butterknife:$apiVersion.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$apiVersion.butterknifeVersion"
+
     api("com.alibaba:arouter-api:$apiVersion.routeApiVersion") {
         exclude group: "com.android.support"
     }
     annotationProcessor "com.alibaba:arouter-compiler:$apiVersion.routeCompilerVersion"
-    api "com.jakewharton:butterknife:$apiVersion.butterknifeVersion"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$apiVersion.butterknifeVersion"
     api "com.ydevelop:album:$apiVersion.albumVersion"
     api "com.ydevelop:editimageview:$apiVersion.editImageVersion"
     api "com.ydevelop:rv-adapter:$apiVersion.rvAdapterVersion"

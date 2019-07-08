@@ -1,6 +1,6 @@
 package com.android.library.bridge.util;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import io.reactivex.disposables.Disposable;
 

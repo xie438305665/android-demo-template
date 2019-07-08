@@ -1,6 +1,6 @@
 package com.android.library.bridge.core.listener;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.android.library.bridge.core.base.BaseNetListener;
 import com.android.library.bridge.core.base.IView;

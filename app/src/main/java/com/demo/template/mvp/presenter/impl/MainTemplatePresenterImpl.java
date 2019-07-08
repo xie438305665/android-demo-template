@@ -1,8 +1,8 @@
 package com.demo.template.mvp.presenter.impl;
 
 
-import android.arch.lifecycle.LifecycleOwner;
-import android.support.annotation.NonNull;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.annotation.NonNull;
 
 import com.demo.template.mvp.presenter.MainTemplatePresenter;
 import com.demo.template.mvp.view.MainTemplateView;

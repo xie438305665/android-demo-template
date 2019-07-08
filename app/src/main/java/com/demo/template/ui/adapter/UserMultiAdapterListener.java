@@ -1,7 +1,7 @@
 package com.demo.template.ui.adapter;
 
 import android.app.Activity;
-import android.support.v7.widget.AppCompatTextView;
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.android.library.bridge.core.listener.SimpleXMultiAdapterListener;
 import com.android.library.bridge.util.ImageLoaderUtils;
