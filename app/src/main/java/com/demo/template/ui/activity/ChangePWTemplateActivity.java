@@ -1,20 +1,22 @@
 package com.demo.template.ui.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+
 import androidx.annotation.Nullable;
-import androidx.core.widget.NestedScrollView;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatTextView;
-import android.view.View;
+import androidx.core.widget.NestedScrollView;
 
 import com.android.library.bridge.R2;
-import com.demo.template.R;
-import com.demo.template.mvp.presenter.impl.ChangePwTemplatePresenterImpl;
-import com.demo.template.mvp.view.ChangePwTemplateView;
 import com.android.library.bridge.core.MVPActivity;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.widget.detector.KeyboardStatusDetector;
+import com.demo.template.R;
+import com.demo.template.mvp.presenter.impl.ChangePwTemplatePresenterImpl;
+import com.demo.template.mvp.view.ChangePwTemplateView;
 
 import butterknife.BindString;
 import butterknife.BindView;
@@ -122,8 +124,8 @@ public class ChangePWTemplateActivity extends MVPActivity<ChangePwTemplatePresen
     }
 
     @Override
-    public View getKeyboardView() {
-        return mRootView;
+    public Activity getActivity() {
+        return this;
     }
 
     @Override

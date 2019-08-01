@@ -1,14 +1,15 @@
 package com.demo.template.ui.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+
 import androidx.annotation.Nullable;
-import androidx.core.widget.NestedScrollView;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatTextView;
-import android.view.View;
+import androidx.core.widget.NestedScrollView;
 
-import com.android.library.bridge.R2;
 import com.android.library.bridge.core.MVPActivity;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.bridge.util.ViewUtils;
@@ -148,8 +149,8 @@ public class RetrievePWTemplateActivity extends MVPActivity<RetrievePwTemplatePr
     }
 
     @Override
-    public View getKeyboardView() {
-        return mRootView;
+    public Activity getActivity() {
+        return this;
     }
 
     @Override

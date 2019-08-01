@@ -1,5 +1,6 @@
 package com.demo.template.ui.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,7 +12,6 @@ import androidx.appcompat.widget.AppCompatEditText;
 import androidx.core.widget.NestedScrollView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.android.library.bridge.R2;
 import com.android.library.bridge.RoutePath;
 import com.android.library.bridge.core.MVPActivity;
 import com.android.library.bridge.util.UIUtils;
@@ -117,8 +117,8 @@ public class LoginTemplateActivity extends MVPActivity<LoginTemplatePresenterImp
     }
 
     @Override
-    public View getKeyboardView() {
-        return mRootView;
+    public Activity getActivity() {
+        return this;
     }
 
     @Override
