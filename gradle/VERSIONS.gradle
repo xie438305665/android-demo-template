@@ -41,5 +41,6 @@ ext.apiVersion = [
         ucropVersion             : '2.2.3',
         frescoVersion            : '1.13.0',
         guavaVersion             : '28.1-android',
+        progressVersion          : '1.4.2',
 ]
 
