@@ -2,8 +2,9 @@ package com.android.library.bridge.util;
 
 import android.annotation.SuppressLint;
 import android.os.Build;
-import androidx.annotation.IntDef;
 import android.text.TextUtils;
+
+import androidx.annotation.IntDef;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;

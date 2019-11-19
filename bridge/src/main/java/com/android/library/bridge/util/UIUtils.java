@@ -25,8 +25,6 @@ import com.hjq.toast.ToastUtils;
 
 import java.lang.reflect.Method;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 public class UIUtils {
@@ -138,6 +136,13 @@ public class UIUtils {
         getContext().startActivity(intent);
     }
 
+    public static void startActivity(String uri) {
+        Intent intent = new Intent();
+        intent.setData(Uri.parse(uri));
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        getContext().startActivity(intent);
+    }
+
     public static void startActivity(Class<?> clz, Bundle bundle) {
         Intent intent = new Intent(getContext(), clz);
         intent.putExtras(bundle);
@@ -177,6 +182,15 @@ public class UIUtils {
         return context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
     }
 
+    public static boolean isDebug(Context context) {
+        try {
+            ApplicationInfo info = context.getApplicationInfo();
+            return (info.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     public static boolean checkNull(Object object) {
         return object == null;
     }
@@ -187,21 +201,6 @@ public class UIUtils {
 
     public static boolean isEmpty(List list) {
         return list == null || list.isEmpty();
-    }
-
-    public static boolean isDebug() {
-        try {
-            ApplicationInfo info = getContext().getApplicationInfo();
-            return (info.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-    public static boolean isMatcherFind(CharSequence input) {
-        Pattern pattern = Pattern.compile("[^a-zA-Z0-9\\u4E00-\\u9FA5_,.?!:;…~_\\-\"\"/@*+'()<>{}/[/]()<>{}\\[\\]=%&$|/♀♂#¥£¢€\"^` ，。？！：；……～“”、“（）”、（——）‘’＠‘·’＆＊＃《》￥《〈〉》〈＄〉［］￡［］｛｝｛｝￠【】【】％〖〗〖〗／〔〕〔〕＼『』『』＾「」「」｜﹁﹂｀．]");
-        Matcher matcher = pattern.matcher(input);
-        return matcher.find();
     }
 
     public static void gotoStore() {

@@ -13,7 +13,7 @@ import java.io.ByteArrayOutputStream;
 public class BitmapUtils {
 
     /**
-     * 获取屏幕的宽高
+     * 获取图片的宽高
      *
      * @param path 文件路径
      * @return [0] 宽 [1]高

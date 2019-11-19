@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.album.ui.activity.AlbumActivity"
+            android:name="com.android.library.bridge.album.ui.activity.AlbumActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity

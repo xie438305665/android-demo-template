@@ -3,8 +3,7 @@ package com.android.library.db;
 import android.annotation.SuppressLint;
 import android.content.Context;
 
-import com.android.library.db.entity.DaoMaster;
-import com.android.library.db.entity.DaoSession;
+
 
 import org.greenrobot.greendao.database.Database;
 

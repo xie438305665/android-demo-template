@@ -1,14 +1,15 @@
 package com.android.library.bridge.core;
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.view.View;
 
-import com.socks.library.KLog;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.android.library.bridge.core.base.IPresenter;
 import com.android.library.bridge.core.base.IView;
 import com.android.library.bridge.util.UIUtils;
+import com.socks.library.KLog;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;

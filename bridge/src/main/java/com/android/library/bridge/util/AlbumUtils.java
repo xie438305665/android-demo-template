@@ -1,23 +1,24 @@
 package com.android.library.bridge.util;
 
-import android.app.Activity;
 import android.content.Context;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.widget.ImageView;
 
-import com.album.Album;
-import com.album.AlbumConfig;
-import com.album.AlbumConstant;
-import com.album.annotation.FrescoType;
-import com.album.annotation.PermissionsType;
-import com.album.entity.AlbumEntity;
-import com.album.entity.FinderEntity;
-import com.album.listener.AlbumImageLoader;
-import com.album.listener.AlbumListener;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.android.library.bridge.R;
+import com.android.library.bridge.album.Album;
+import com.android.library.bridge.album.AlbumConfig;
+import com.android.library.bridge.album.AlbumConstant;
+import com.android.library.bridge.album.annotation.FrescoType;
+import com.android.library.bridge.album.annotation.PermissionsType;
+import com.android.library.bridge.album.entity.AlbumEntity;
+import com.android.library.bridge.album.entity.FinderEntity;
+import com.android.library.bridge.album.listener.AlbumImageLoader;
+import com.android.library.bridge.album.listener.AlbumListener;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.android.library.bridge.R;
 
 import java.io.File;
 
@@ -30,12 +31,12 @@ public class AlbumUtils {
             .setPreviewFinishRefresh(true)
             .setPreviewBackRefresh(true);
 
-    public static void openFeedbackAlbum(Activity activity, SimpleListener simpleListener) {
+    public static void openFeedbackAlbum(AppCompatActivity activity, SimpleListener simpleListener) {
         resetAlbum();
         Album
                 .getInstance()
                 .setAlbumListener(simpleListener)
-                .setConfig(CONFIG.setRadio(false).setMultipleMaxCount(2).setHideCamera(false))
+                .setConfig(CONFIG.setRadio(false).setMultipleMaxCount(1).setHideCamera(false))
                 .start(activity);
     }
 

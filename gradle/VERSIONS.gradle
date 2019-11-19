@@ -21,16 +21,13 @@ ext.apiVersion = [
         lifecycleJava8Version    : '1.1.1',
         supportVersion           : '28.0.0',
         constraintVersion        : '1.1.3',
-        butterknifeVersion       : '10.1.0',
+        butterknifeVersion       : '9.0.0-rc3',
 
-        albumVersion             : '0.0.4.2',
         rvAdapterVersion         : '0.0.7',
-        editImageVersion         : 'beta01',
         rxNetWorkVersion         : '0.1.8',
         statusLayoutVersion      : 'beta',
 
         routeApiVersion          : '1.4.1',
-        routeCompilerVersion     : '1.2.2',
 
         downloadVersion          : '1.7.5',
         gsonVersion              : '2.7',
@@ -41,8 +38,8 @@ ext.apiVersion = [
         lubanVersion             : '1.1.8',
         buglyVersion             : '2.6.6.1',
         toastVersion             : '5.0',
-        progressVersion          : '1.4.2',
-        rmswitchVersion          : '1.2.2',
-        chipsLayoutManagerVersion: '0.3.7@aar',
+        ucropVersion             : '2.2.3',
+        frescoVersion            : '1.13.0',
+        guavaVersion             : '28.1-android',
 ]
 

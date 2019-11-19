@@ -1,15 +1,12 @@
 package com.android.library.bridge.core;
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.view.View;
 import android.view.ViewStub;
 
-import com.socks.library.KLog;
-import com.status.layout.OnStatusClickListener;
-import com.status.layout.Status;
-import com.status.layout.StatusLayout;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.android.library.bridge.R;
 import com.android.library.bridge.core.base.BaseActivity;
 import com.android.library.bridge.util.ActivityUtils;
@@ -18,6 +15,10 @@ import com.android.library.bridge.util.UIUtils;
 import com.android.library.widget.custom.CustomLoadingView;
 import com.android.library.widget.custom.CustomToolBar;
 import com.android.library.widget.listener.OnCustomToolBarClickListener;
+import com.socks.library.KLog;
+import com.status.layout.OnStatusClickListener;
+import com.status.layout.Status;
+import com.status.layout.StatusLayout;
 
 /**
  * @author xcl

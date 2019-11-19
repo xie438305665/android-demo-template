@@ -3,13 +3,11 @@ package com.demo.template.ui.activity;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 
-import com.android.library.bridge.R2;
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import android.view.KeyEvent;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.android.library.bridge.RoutePath;
 import com.android.library.bridge.core.MVPActivity;
 import com.android.library.bridge.util.ActivityUtils;
 import com.android.library.bridge.util.ImageLoaderUtils;

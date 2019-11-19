@@ -3,20 +3,20 @@ package com.android.library.bridge.core;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import com.android.library.bridge.R;
+import com.android.library.bridge.core.base.BaseFragment;
+import com.android.library.bridge.util.UIUtils;
 import com.socks.library.KLog;
 import com.status.layout.OnStatusClickListener;
 import com.status.layout.Status;
 import com.status.layout.StatusLayout;
-import com.android.library.bridge.R;
-import com.android.library.bridge.core.base.BaseFragment;
-import com.android.library.bridge.util.UIUtils;
-
 
 /**
  * @author xcl
@@ -62,8 +62,6 @@ public abstract class StatusFragment extends BaseFragment implements OnStatusCli
         mStatusLayout.setStatus(Status.SUCCESS);
         mStatusLayout.setOnStatusClickListener(this);
     }
-
-    protected abstract int getLayoutId();
 
     @Status
     public String getCurrentStatus() {

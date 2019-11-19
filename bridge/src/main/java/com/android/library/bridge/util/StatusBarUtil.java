@@ -5,12 +5,13 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Environment;
-import androidx.annotation.ColorInt;
-import androidx.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
 
 import java.io.File;
 import java.io.FileInputStream;

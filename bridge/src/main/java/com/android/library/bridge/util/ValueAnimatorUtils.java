@@ -2,9 +2,10 @@ package com.android.library.bridge.util;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
-import androidx.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
 
 public class ValueAnimatorUtils {
 

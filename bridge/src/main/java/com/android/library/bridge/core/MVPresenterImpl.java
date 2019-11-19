@@ -1,7 +1,7 @@
 package com.android.library.bridge.core;
 
-import androidx.lifecycle.LifecycleOwner;
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LifecycleOwner;
 
 import com.android.library.bridge.core.base.IView;
 import com.android.library.net.NetRequest;

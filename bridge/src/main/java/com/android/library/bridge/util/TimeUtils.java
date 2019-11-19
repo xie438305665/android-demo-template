@@ -2,8 +2,10 @@ package com.android.library.bridge.util;
 
 import android.annotation.SuppressLint;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * @author xcl
@@ -30,6 +32,17 @@ public class TimeUtils {
     public static String stampToDay() {
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DATE, -1);
-        return new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime());
+        return new SimpleDateFormat("yyyy-MM-dd", Locale.US).format(calendar.getTime());
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    public static long strDayToLong(String strDay) {
+        Calendar calendar = Calendar.getInstance();
+        try {
+            calendar.setTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US).parse(strDay));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return calendar.getTimeInMillis();
     }
 }

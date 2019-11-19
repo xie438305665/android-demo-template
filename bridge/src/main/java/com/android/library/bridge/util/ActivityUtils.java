@@ -1,28 +1,29 @@
 package com.android.library.bridge.util;
 
-import android.app.Activity;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ActivityUtils {
 
-    private static final List<Activity> list = new ArrayList<>();
+    private static final List<AppCompatActivity> list = new ArrayList<>();
 
-    public static void addActivity(Activity activity) {
+    public static void addActivity(AppCompatActivity activity) {
         list.add(activity);
     }
 
-    public static void removeActivity(Activity activity) {
+    public static void removeActivity(AppCompatActivity activity) {
         list.remove(activity);
     }
 
-    public static List<Activity> getAllActivity() {
+    public static List<AppCompatActivity> getAllActivity() {
         return list;
     }
 
     public static void removeAllActivity() {
-        for (Activity activity : list) {
+        for (AppCompatActivity activity : list) {
             if (!activity.isFinishing()) {
                 activity.finish();
             }

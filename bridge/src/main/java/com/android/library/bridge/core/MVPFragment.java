@@ -1,16 +1,17 @@
 package com.android.library.bridge.core;
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.socks.library.KLog;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.android.library.bridge.core.base.IPresenter;
 import com.android.library.bridge.core.base.IView;
 import com.android.library.bridge.util.UIUtils;
+import com.socks.library.KLog;
 
 import java.util.Objects;
 
@@ -79,11 +80,11 @@ public abstract class MVPFragment<P extends IPresenter, ENTITY> extends StatusFr
 
     @Override
     public void onChangeRootUI(String status) {
-        KLog.i(status);
         if (mStatusLayout != null) {
             mStatusLayout.setStatus(status);
         }
     }
+
 
     protected void showLoading() {
         KLog.d("showLoading");

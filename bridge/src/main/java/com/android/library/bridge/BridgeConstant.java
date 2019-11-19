@@ -41,4 +41,12 @@ public class BridgeConstant {
      * 腾讯bugly key
      */
     public static final String BUG_LY_KEY = "USER";
+    /**
+     * 项目登录页uri
+     */
+    public static final String LOGIN_URI = "com.demo.template.ui.activity.LoginTemplateActivity";
+    /**
+     * 项目首页uri
+     */
+    public static final String MAIN_URI = "com.demo.template.ui.activity.MainTemplateActivity";
 }

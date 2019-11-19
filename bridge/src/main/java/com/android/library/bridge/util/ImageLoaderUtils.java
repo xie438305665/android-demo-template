@@ -1,9 +1,11 @@
 package com.android.library.bridge.util;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Looper;
-import androidx.annotation.NonNull;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.cache.InternalCacheDiskCacheFactory;
@@ -28,6 +30,10 @@ public class ImageLoaderUtils {
 
     public static void display(@NonNull ImageView imageView, Object url) {
         Glide.with(imageView.getContext()).load(url).apply(requestOptions).into(imageView);
+    }
+
+    public static void display(@NonNull ImageView imageView, String url, Drawable placeImage) {
+        Glide.with(imageView.getContext()).load(url).apply(new RequestOptions().placeholder(placeImage)).into(imageView);
     }
 
     public static void displayFile(@NonNull Context context, String path, Target<File> target) {
@@ -83,17 +89,17 @@ public class ImageLoaderUtils {
         }
         double megaByte = kiloByte / 1024;
         if (megaByte < 1) {
-            BigDecimal result1 = new BigDecimal(Double.toString(kiloByte));
+            BigDecimal result1 = BigDecimal.valueOf(kiloByte);
             return result1.setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString() + "KB";
         }
         double gigaByte = megaByte / 1024;
         if (gigaByte < 1) {
-            BigDecimal result2 = new BigDecimal(Double.toString(megaByte));
+            BigDecimal result2 = BigDecimal.valueOf(megaByte);
             return result2.setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString() + "MB";
         }
         double teraBytes = gigaByte / 1024;
         if (teraBytes < 1) {
-            BigDecimal result3 = new BigDecimal(Double.toString(gigaByte));
+            BigDecimal result3 = BigDecimal.valueOf(gigaByte);
             return result3.setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString() + "GB";
         }
         BigDecimal result4 = new BigDecimal(teraBytes);
