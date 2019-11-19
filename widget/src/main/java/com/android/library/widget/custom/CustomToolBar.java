@@ -22,8 +22,6 @@ import com.android.library.widget.listener.OnCustomToolBarClickListener;
  * @author xcl
  */
 public class CustomToolBar extends FrameLayout {
-
-
     private AppCompatImageView leftIv;
     private AppCompatImageView rightIv;
     private AppCompatTextView centerTv;

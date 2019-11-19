@@ -11,7 +11,6 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.core.widget.NestedScrollView;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
 import com.android.library.bridge.core.MVPActivity;
 import com.android.library.bridge.util.UIUtils;
 import com.android.library.widget.detector.KeyboardStatusDetector;
@@ -26,7 +25,6 @@ import butterknife.OnClick;
 /**
  * @author xcl
  */
-@Route(path = RoutePath.LOGIN)
 public class LoginTemplateActivity extends MVPActivity<LoginTemplatePresenterImpl, Object> implements LoginTemplateView, KeyboardStatusDetector.KeyboardListener {
 
     @BindView(R.id.login_et_user)
@@ -49,7 +47,7 @@ public class LoginTemplateActivity extends MVPActivity<LoginTemplatePresenterImp
         });
         keyboardStatusDetector = new KeyboardStatusDetector(this);
         mRootView.getViewTreeObserver().addOnGlobalLayoutListener(keyboardStatusDetector);
-        if (UIUtils.isDebug()) {
+        if (UIUtils.isDebug(getApplicationContext())) {
             mUser.setText("");
             mPw.setText("");
         }

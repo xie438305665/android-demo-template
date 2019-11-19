@@ -30,7 +30,7 @@ android {
         targetSdkVersion localVersion.targetSdkVersion
         versionCode localVersion.versionCode
         versionName localVersion.versionName
-        resConfigs "zh"
+        resConfigs "android"
         multiDexEnabled true
         javaCompileOptions {
             annotationProcessorOptions {
@@ -66,6 +66,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                outputFileName = "template_" + defaultConfig.versionName + ".apk"
+            }
+    }
+
     sourceSets{
         main{
             res.srcDirs=[
@@ -77,7 +85,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api "com.jakewharton:butterknife:$apiVersion.butterknifeVersion"
+    implementation "com.jakewharton:butterknife:$apiVersion.butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$apiVersion.butterknifeVersion"
     api project(':bridge')
 }

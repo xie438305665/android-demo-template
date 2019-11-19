@@ -2,11 +2,11 @@ package com.demo.template.ui.activity;
 
 import android.os.Bundle;
 import android.os.Handler;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import com.android.library.bridge.BridgeConstant;
-import com.android.library.bridge.R2;
 import com.android.library.bridge.core.MVPActivity;
 import com.android.library.bridge.core.MVPresenterImpl;
 import com.android.library.bridge.util.ImageLoaderUtils;
@@ -70,7 +70,7 @@ public class AboutTemplateActivity extends MVPActivity {
         }
         upgrade
                 .setType(Upgrade.TYPE_CLICK)
-                .setIcon(R.drawable.ic_launcher)
+                .setIcon(R.drawable.ic_launcher_background)
                 .setApkName(BridgeConstant.UPGRADE_NAME)
                 .setSoftwareId(BridgeConstant.UPGRADE_ID)
                 .setPackageName(BridgeConstant.MASTER_ID)

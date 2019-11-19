@@ -22,7 +22,6 @@ public abstract class MVPresenterImpl<V extends IView> extends MVPLifecyclePrese
         NetRequest.single().useless();
     }
 
-    @Deprecated
     public <M> void NetLife(@NonNull Object tag, @NonNull Observable<M> observable, @NonNull RxNetWorkListener<M> listener) {
         NetRequest.single().getApi(tag, observable.compose(bindLifecycle()), listener);
     }
